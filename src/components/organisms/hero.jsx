@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
+import HeroBox from '../molecules/hero-box';
 
 const Hero = () => {
     return(
 
-        <div className="page-hero">
-            <div className="container">
-        
-            <h1>Title Here</h1>
-            <h2>Description here</h2>
-        
+        <div className="container hero__container">
+
+            <h1>Large Title</h1>
+
+            <div className="hero">
+
+            <HeroBox className="bg-green" title="Test title"></HeroBox>
+
+            <HeroBox className="bg-gray">Some content here</HeroBox>
+
+            <HeroBox className="bg-blue">Some content here</HeroBox>
+            
             </div>
+
         </div>
     )
 }

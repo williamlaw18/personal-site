@@ -4,9 +4,9 @@ import Hero from './components/organisms/hero'
 
 function App() {
   return (
-    <React.Fragment>
+    <div className="page-container">
       <Hero />
-    </React.Fragment>
+    </div>
   );
 }
 
