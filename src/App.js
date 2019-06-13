@@ -3,6 +3,7 @@ import './styles/index.sass'
 import Hero from './components/organisms/hero'
 import Section from './components/molecules/section'
 import Icons from './components/organisms/icons';
+import Cta from './components/organisms/cta';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
       </Section>
 
       <Icons />
+
+      <Cta />
 
     </div>
   );
