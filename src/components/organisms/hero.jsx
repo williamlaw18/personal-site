@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 
-const Hero = () => {
-    return(
+class Hero extends Component{
 
-        <section className="container container__hero">
+    render(){
+        return(
 
-            <h1>Large Title</h1>
+            <section className="container container__hero">
 
-            <div className="hero">
+                {this.props.title && 
+                    <h1>{this.props.title}</h1>
+                }
 
-                <h2>Sub title content here</h2>
+                <div className="hero">
 
-                <p>
-                    Sed nisl erat, blandit in ex tincidunt, iaculis tempus lectus. Aenean pulvinar tellus ut purus rutrum venenatis. Proin nisi velit, congue eu ex sed, luctus finibus lectus.
-                </p>
-            
-            </div>
+                    <h2>{this.props.subtitle}</h2>
 
-        </section>
-    )
+                    {this.props.children}
+                
+                </div>
+
+            </section>
+        )
+    }
 }
 
 export default Hero

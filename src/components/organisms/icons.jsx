@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import IconsSingle from '../molecules/icons-single'
+import IconSingle from '../molecules/icons-single';
+import IconArr from '../atoms/icons-array';
 
 class Icons extends Component{
     render(){
@@ -7,7 +8,11 @@ class Icons extends Component{
 
             <section className="container container__icons">
 
-                <IconsSingle />
+            {
+                IconArr.map((icon, index) => (
+                    <IconSingle image={IconArr[index]}/>
+                ))
+            } 
 
             </section>
         )
