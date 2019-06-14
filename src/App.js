@@ -6,6 +6,7 @@ import Hero from './components/organisms/hero'
 import Section from './components/molecules/section'
 import Icons from './components/organisms/icons';
 import Cta from './components/organisms/cta';
+import Fixed from './components/molecules/fixed';
 
 //Content Arrays
 import SkillsIcons from './content/skills-icons';
@@ -17,11 +18,15 @@ class App extends Component{
     return (
       <div className="page-container">
 
-        <Hero title="Large Title" subtitle="Some subtitle goes here">
-          
-          <p>Ut arcu mi, vestibulum sit amet tincidunt sit amet, pellentesque vel nisi. Mauris sit amet nisl vel est mattis condimentum eget ac sapien.</p>
+        <header>
 
-        </Hero>
+          <Hero title="Large Title" subtitle="Some subtitle goes here">
+            
+            <p>Ut arcu mi, vestibulum sit amet tincidunt sit amet, pellentesque vel nisi. Mauris sit amet nisl vel est mattis condimentum eget ac sapien.</p>
+
+          </Hero>
+
+        </header>
         
         <Section>
 
@@ -33,6 +38,8 @@ class App extends Component{
         <Cta array={PortfolioCTA}/>
 
         <Icons array={SkillsIcons}/>
+
+        <Fixed/>
 
       </div>
     );

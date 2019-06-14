@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import IconSingle from '../molecules/icons-single';
 
 class Icons extends Component{
+    
     render(){
         return(
 
