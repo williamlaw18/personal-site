@@ -6,7 +6,11 @@ class Section extends Component{
 
             <section className="container container__section">
 
-                {this.props.children}
+                <div className="container section section__wrapper">
+
+                    {this.props.children}
+
+                </div>
 
             </section>
         )

@@ -30,9 +30,9 @@ class App extends Component{
 
         </Section>
 
-        <Icons array={SkillsIcons}/>
-
         <Cta array={PortfolioCTA}/>
+
+        <Icons array={SkillsIcons}/>
 
       </div>
     );

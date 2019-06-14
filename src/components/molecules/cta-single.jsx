@@ -8,6 +8,10 @@ class CtaSingle extends Component{
                 
                 <div className="cta__single-wrapper" style={{backgroundImage: "url("+ this.props.image +")"}}>
 
+                    <div className="cta__single-preview">
+                        <h3>{this.props.preview}</h3>
+                    </div>
+
                     <div className="cta__single-content">
 
                         {this.props.children}

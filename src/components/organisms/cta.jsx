@@ -10,7 +10,7 @@ class Cta extends Component{
 
             {
                 this.props.array.map((icon, index) => (
-                    <CtaSingle key={"cta-"+ index} image={icon.img}>
+                    <CtaSingle key={"cta-"+ index} preview={icon.preview} image={icon.img}>
                         {icon.content}
                     </CtaSingle>
                 ))
