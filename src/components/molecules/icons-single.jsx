@@ -4,7 +4,7 @@ class IconSingle extends Component{
     render(){
         return(
 
-            <div class="icons icons__single">
+            <div className="icons icons__single">
                 <img src={this.props.image}></img>
             </div>
         )
