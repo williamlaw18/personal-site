@@ -1,32 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Fixed extends Component{
+const Fixed = () => {
 
-    render(){
-        return(
+    return(
 
-            <section className="container__fixed">
+        <section className="container__fixed">
 
-                <div className="fixed fixed__wrapper">
+            <div className="fixed fixed__wrapper">
 
-                    <div className="fixed__wrapper-button">
-                    </div>
+                <div className="fixed__wrapper-button">
+                </div>
 
-                    <div className="fixed__wrapper-popout">
+                <div className="fixed__wrapper-popout">
 
-                        <a href="mailto:21will01law00@gmail.com">
-                            <span>
-                                Contact me!
-                            </span>
-                        </a>
-
-                    </div>
+                    <a href="mailto:21will01law00@gmail.com">
+                        <span>
+                            Contact me!
+                        </span>
+                    </a>
 
                 </div>
 
-            </section>
-        )
-    }
+            </div>
+
+        </section>
+    )
 }
 
 export default Fixed

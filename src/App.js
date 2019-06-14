@@ -7,6 +7,7 @@ import Section from './components/molecules/section'
 import Icons from './components/organisms/icons';
 import Cta from './components/organisms/cta';
 import Fixed from './components/molecules/fixed';
+import Gitfork from './components/atoms/gitfork';
 
 //Content Arrays
 import SkillsIcons from './content/skills-icons';
@@ -19,6 +20,8 @@ class App extends Component{
       <div className="page-container">
 
         <header>
+
+          <Gitfork/>
 
           <Hero title="Large Title" subtitle="Some subtitle goes here">
             
