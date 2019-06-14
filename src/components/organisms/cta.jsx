@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CtaSingle from '../molecules/cta-single';
-import CtaArr from '../atoms/cta-array';
 
 class Cta extends Component{
 
@@ -10,8 +9,10 @@ class Cta extends Component{
             <section className="container container__cta">
 
             {
-                CtaArr.map((icon, index) => (
-                    <CtaSingle image={CtaArr[index]}/>
+                this.props.array.map((icon, index) => (
+                    <CtaSingle key={"cta-"+ index} image={icon.img}>
+                        {icon.content}
+                    </CtaSingle>
                 ))
             } 
 
