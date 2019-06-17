@@ -1,4 +1,6 @@
 ---
 title: Blog
-featuredImage: /images/uploads/ng-32703.jpg
+featuredImage: /images/andrew-ridley-276211-unsplash.jpg
+subtitle: test
 ---
+
