@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown'
+import termsFrPath from './content/pages/home.md'
 import './styles/index.sass'
 
 // Top level Modules
@@ -10,11 +12,25 @@ import Cta from './components/organisms/cta';
 import Fixed from './components/molecules/fixed';
 import Gitfork from './components/atoms/gitfork';
 
+import markdown from './content/pages/home.md';
+
 //Content Arrays
 import SkillsIcons from './content/skills-icons';
 import PortfolioCTA from './content/portfolio-cta';
 
 class Home extends Component{
+
+  constructor(props) {
+    super(props)
+
+    this.state = { terms: null }
+  }
+
+  componentWillMount() {
+    fetch(termsFrPath).then((response) => response.text()).then((text) => {
+      this.setState({ terms: text })
+    })
+  }
 
   render(){
     return (
@@ -26,7 +42,7 @@ class Home extends Component{
 
           <Hero title="Large Title" subtitle="Some subtitle goes here">
             
-            <p>Ut arcu mi, vestibulum sit amet tincidunt sit amet, pellentesque vel nisi. Mauris sit amet nisl vel est mattis condimentum eget ac sapien.</p>
+            {this.state.terms}
 
           </Hero>
 
