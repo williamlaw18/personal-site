@@ -12,7 +12,6 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route component={BadPage} />
-
         </Switch>
         <Footer/>
       </Router>
