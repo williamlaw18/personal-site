@@ -26,7 +26,7 @@ class Home extends Component{
 
           <Hero title="Large Title" subtitle="Some subtitle goes here">
           
-          <p>Nam mollis efficitur diam, eget iaculis ligula gravida. </p>
+            <p>Nam mollis efficitur diam, eget iaculis ligula gravida. </p>
 
           </Hero>
 
@@ -48,7 +48,7 @@ class Home extends Component{
 
           </Section>
 
-          <Icons array={SkillsIcons}/>
+        <Icons array={SkillsIcons}/>
 
         <Fixed/>
 
