@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown'
-import termsFrPath from './content/pages/home.md'
 import './styles/index.sass'
 
 // Top level Modules
@@ -11,8 +9,6 @@ import Icons from './components/organisms/icons';
 import Cta from './components/organisms/cta';
 import Fixed from './components/molecules/fixed';
 import Gitfork from './components/atoms/gitfork';
-
-import markdown from './content/pages/home.md';
 
 //Content Arrays
 import SkillsIcons from './content/skills-icons';
@@ -30,7 +26,7 @@ class Home extends Component{
 
           <Hero title="Large Title" subtitle="Some subtitle goes here">
           
-          <ReactMarkdown source={markdown} className={"title"}/>
+          <p>Nam mollis efficitur diam, eget iaculis ligula gravida. </p>
 
           </Hero>
 
