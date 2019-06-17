@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default [
 
     {
-        img : 'http://placeimg.com/440/465/any',
+        img : 'http://placeimg.com/440/464/any',
         preview: 'This is a title',
         content :   <React.Fragment>
                         <h3>Test Title</h3>
@@ -12,7 +12,7 @@ export default [
     },
     
     {
-        img : 'http://placeimg.com/440/466/any',
+        img : 'http://placeimg.com/440/467/any',
         preview: 'This is a title',
         content :   <React.Fragment>
                         <h3>Another Title</h3>

@@ -2,6 +2,7 @@
 .container__cta
     display: flex
     flex-wrap: wrap
+    position: relative
 
     .cta
 
@@ -21,8 +22,13 @@
                 display: flex
                 align-items: flex-end
                 box-shadow: 2px 2px 1px $gray
+                transition: all .3s
 
                 &:hover
+                    transform: scale(1.05)
+                    z-index: 5
+                    box-shadow: none
+
                     > .cta__single-preview
                         opacity: 0
 
