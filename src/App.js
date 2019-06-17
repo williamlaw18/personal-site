@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import BadPage from './404';
 
+import Footer from './components/organisms/footer'
+
 class App extends Component {
   render() {
     return (
@@ -10,7 +12,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route component={BadPage} />
+
         </Switch>
+        <Footer/>
       </Router>
     );
   }

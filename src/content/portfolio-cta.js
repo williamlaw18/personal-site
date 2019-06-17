@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import employersolutions from '../assets/images/es.png';
 import lodgebywindermere from '../assets/images/lodge.png';
-import personalsite from '../assets/images/me2.png';
+import personalsite from '../assets/images/portfolio.png';
 
 export default [
 
