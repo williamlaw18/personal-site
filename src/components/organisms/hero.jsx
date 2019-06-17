@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Tagline from '../molecules/tagline';
 
 class Hero extends Component{
 
@@ -7,16 +8,16 @@ class Hero extends Component{
 
             <section className="container container__hero">
 
-                {this.props.title && 
+                {this.props.title &&
                     <h1>{this.props.title}</h1>
                 }
 
                 <div className="hero">
 
-                    <h2>{this.props.subtitle}</h2>
+                    <h2><Tagline/></h2>
 
                     {this.props.children}
-                
+
                 </div>
 
             </section>

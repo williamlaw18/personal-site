@@ -8,13 +8,21 @@ class Cta extends Component{
 
             <section className="container container__cta">
 
-            {
-                this.props.array.map((icon, index) => (
-                    <CtaSingle key={"cta-"+ index} preview={icon.preview} image={icon.img}>
-                        {icon.content}
-                    </CtaSingle>
-                ))
-            } 
+              {this.props.title &&
+                <h3 className="section__title">{this.props.title}</h3>
+              }
+
+              <div className="cta cta__wrapper">
+
+                {
+                    this.props.array.map((cta, index) => (
+                        <CtaSingle key={"cta-"+ index} preview={cta.preview} image={cta.img} link={cta.link}>
+                            {cta.content}
+                        </CtaSingle>
+                    ))
+                }
+
+              </div>
 
             </section>
         )
