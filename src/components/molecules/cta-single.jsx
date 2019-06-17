@@ -17,7 +17,7 @@ class CtaSingle extends Component{
         return(
 
             <div className="cta cta__single" toggled={this.state.ctaToggle.toString()}>
-                
+
                 <div className={"cta__single-wrapper" + this.state.ctaClass} onClick={this.handleClick} style={{backgroundImage: "url("+ this.props.image +")"}}>
 
                     <div className="cta__single-preview">
@@ -27,6 +27,14 @@ class CtaSingle extends Component{
                     <div className="cta__single-content">
 
                         {this.props.children}
+
+                        {this.props.link &&
+                          <div className="button__container">
+                            <a className="button button__primary" href={this.props.link}>
+                              Check it out!
+                            </a>
+                          </div>
+                        }
 
                     </div>
 

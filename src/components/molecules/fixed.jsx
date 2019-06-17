@@ -23,6 +23,14 @@ const Fixed = () => {
 
             </div>
 
+            <div className="fixed fixed__border-top">
+
+            </div>
+
+            <div className="fixed fixed__border-sides">
+
+            </div>
+
         </section>
     )
 }

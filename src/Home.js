@@ -24,24 +24,26 @@ class Home extends Component{
 
           <Gitfork/>
 
-          <Hero title="Large Title" subtitle="Some subtitle goes here">
-          
-            <p>Nam mollis efficitur diam, eget iaculis ligula gravida. </p>
+          <Hero title="Will Law">
+
+            <p>📍 Ulverston, Cumbria, United Kingdom</p>
 
           </Hero>
 
         </header>
-        
+
         <Section>
 
-          <p>Nullam euismod nisi id suscipit venenatis. Nullam ut congue mi. Aliquam vitae velit nec sem molestie vehicula eget id tellus. Quisque non vestibulum dolor. Nullam in ligula id mi ultricies laoreet.</p>
-          <p>Nam mollis efficitur diam, et pharetra arcu consectetur nec. Vestibulum commodo mauris id ex sollicitudin, eget iaculis ligula gravida. </p>
+          <p>Hi! I am a self taught, North West UK based web developer primarily experienced in Javascript, PHP, React, HTML & CSS, and Git based development.
+          I love taking fresh, modern approaches to developing sites on the web, while also maintaining a key understanding off classical stacks</p>
+
+          <p>When I'm not working, I love spending time with my close family, enjoying nights out with friends, building and tinkering with computers, and playing online video games</p>
 
         </Section>
 
-        <Cta array={PortfolioCTA}/>
+        <Cta title={"Projects I've been a part of..."} array={PortfolioCTA}/>
 
-        <Section classList="align-right" title={"Test title here"}>
+        <Section title={"Test title here"}>
 
           <p>Nullam euismod nisi id suscipit venenatis. Nullam ut congue mi. Aliquam vitae velit nec sem molestie vehicula eget id tellus. Quisque non vestibulum dolor. Nullam in ligula id mi ultricies laoreet.</p>
           <p>Nam mollis efficitur diam, et pharetra arcu consectetur nec. Vestibulum commodo mauris id ex sollicitudin, eget iaculis ligula gravida. </p>
