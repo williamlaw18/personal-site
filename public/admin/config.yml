@@ -74,7 +74,7 @@ collections:
     editor:
       preview: true
     files:
-      - file: "content/pages/contact.md"
+      - file: "src/content/pages/contact.md"
         label: "Contact Page"
         name: "contact-page"
         fields:
@@ -95,7 +95,7 @@ collections:
               - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
               - {label: Noindex, name: noindex, widget: boolean, required: false}
 
-      - file: "content/pages/blog.md"
+      - file: "src/content/pages/blog.md"
         label: "Blog Page"
         name: "blog-page"
         fields:
@@ -112,7 +112,7 @@ collections:
               - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
               - {label: Noindex, name: noindex, widget: boolean, required: false}
 
-      - file: "content/pages/about.md"
+      - file: "src/content/pages/about.md"
         label: "About Page"
         name: "about-page"
         fields:
@@ -131,7 +131,7 @@ collections:
               - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
               - {label: Noindex, name: noindex, widget: boolean, required: false}
 
-      - file: "content/pages/home.md"
+      - file: "src/content/pages/home.md"
         label: "Home Page"
         name: "home-page"
         fields:
