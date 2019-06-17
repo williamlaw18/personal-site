@@ -40,10 +40,6 @@ class Home extends Component{
         </Section>
 
         <Cta array={PortfolioCTA}/>
-        
-        <Link className="App-link" to="/about">Invalid Route</Link>
-
-        <Link className="App-link" to="/admin">Netlify Route</Link>
 
         <Icons array={SkillsIcons}/>
 
