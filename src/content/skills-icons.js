@@ -1,9 +1,9 @@
 
-import reactLogo from '../assets/images/logo-react.svg';
-import phpLogo from '../assets/images/logo-php2.svg';
-import jsLogo from '../assets/images/logo-js.svg';
-import sassLogo from '../assets/images/logo-sass.svg';
-import githubLogo from '../assets/images/logo-github.svg';
+import reactLogo from '../assets/logos/logo-react.svg';
+import phpLogo from '../assets/logos/logo-php2.svg';
+import jsLogo from '../assets/logos/logo-js.svg';
+import sassLogo from '../assets/logos/logo-sass.svg';
+import githubLogo from '../assets/logos/logo-github.svg';
 
 
 export default [

@@ -14,7 +14,7 @@ class Hero extends Component{
 
                 <div className="hero">
 
-                    <h2><Tagline/></h2>
+                    <h2>{this.props.tagline}</h2>
 
                     {this.props.children}
 

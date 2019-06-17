@@ -24,7 +24,7 @@ class Home extends Component{
 
           <Gitfork/>
 
-          <Hero title="Will Law">
+          <Hero title="Will Law" tagline="Web Developer">
 
             <p>📍 Ulverston, Cumbria, United Kingdom</p>
 
