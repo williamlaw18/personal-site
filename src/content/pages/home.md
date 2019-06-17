@@ -1,7 +1,8 @@
 ---
 title: Hello World!
-featuredImage: /images/uploads/isabella juskova.jpg
+featuredImage: /images/andrew-ridley-276211-unsplash.jpg
 subtitle: This is the home page subtitle
 meta:
   title: ''
 ---
+test
