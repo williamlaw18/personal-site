@@ -41,7 +41,14 @@ class Home extends Component{
 
         <Cta array={PortfolioCTA}/>
 
-        <Icons array={SkillsIcons}/>
+        <Section classList="align-right" title={"Test title here"}>
+
+          <p>Nullam euismod nisi id suscipit venenatis. Nullam ut congue mi. Aliquam vitae velit nec sem molestie vehicula eget id tellus. Quisque non vestibulum dolor. Nullam in ligula id mi ultricies laoreet.</p>
+          <p>Nam mollis efficitur diam, et pharetra arcu consectetur nec. Vestibulum commodo mauris id ex sollicitudin, eget iaculis ligula gravida. </p>
+
+          </Section>
+
+          <Icons array={SkillsIcons}/>
 
         <Fixed/>
 
