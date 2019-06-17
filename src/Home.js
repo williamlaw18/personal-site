@@ -25,8 +25,8 @@ class Home extends Component{
           <Gitfork/>
 
           <Hero title="Large Title" subtitle="Some subtitle goes here">
-            
-            <p>Ut arcu mi, vestibulum sit amet tincidunt sit amet, pellentesque vel nisi. Mauris sit amet nisl vel est mattis condimentum eget ac sapien.</p>
+          
+            <p>Nam mollis efficitur diam, eget iaculis ligula gravida. </p>
 
           </Hero>
 
@@ -48,7 +48,7 @@ class Home extends Component{
 
           </Section>
 
-          <Icons array={SkillsIcons}/>
+        <Icons array={SkillsIcons}/>
 
         <Fixed/>
 
