@@ -20,18 +20,6 @@ import PortfolioCTA from './content/portfolio-cta';
 
 class Home extends Component{
 
-  constructor(props) {
-    super(props)
-
-    this.state = { terms: null }
-  }
-
-  componentWillMount() {
-    fetch(termsFrPath).then((response) => response.text()).then((text) => {
-      this.setState({ terms: text })
-    })
-  }
-
   render(){
     return (
       <div className="page-container">
@@ -41,8 +29,8 @@ class Home extends Component{
           <Gitfork/>
 
           <Hero title="Large Title" subtitle="Some subtitle goes here">
-            
-            {this.state.terms}
+          
+          <ReactMarkdown source={markdown} className={"title"}/>
 
           </Hero>
 
