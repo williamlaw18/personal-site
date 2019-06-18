@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './Home';
-import BadPage from './404';
+import { Link } from 'react-router-dom';
+import './styles/index.sass'
 
+// Top level Modules
+import Header from './components/organisms/header'
 import Footer from './components/organisms/footer'
+import Fixed from './components/molecules/fixed';
 
-class App extends Component {
-  render() {
+// Page router
+import PageRouter from './Router'
+
+class App extends Component{
+
+  render(){
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route component={BadPage} />
-        </Switch>
+      <div className="container__all">
+
+        <Header/>
+
+        <PageRouter/>
+
+        <Fixed/>
+
         <Footer/>
-      </Router>
+
+      </div>
     );
   }
 }

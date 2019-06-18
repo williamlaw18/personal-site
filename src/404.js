@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom';
 class About extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            You went to an invalid Route.
-          </p>
-          <p>
-            <Link className="App-link" to="/">Home</Link>
-          </p>
-        </header>
+      <div className="container__page">
+        
+        <div className="container">
+            <h3>404</h3>
+
+            <Link className="App-link" to="/">Return Home</Link>
+        </div>
+
       </div>
     );
   }

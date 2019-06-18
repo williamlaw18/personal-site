@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import employersolutions from '../assets/images/es.png';
 import lodgebywindermere from '../assets/images/lodge.png';
