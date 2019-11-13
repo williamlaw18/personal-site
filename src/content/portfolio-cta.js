@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import employersolutions from '../assets/images/es.png';
 import lodgebywindermere from '../assets/images/lodge.png';
@@ -17,9 +17,9 @@ export default [
                         <p>Technologies Used:</p>
                         <ul>
                           <li>PHP</li>
-                          <li>MySQL</li>
+                          <li>HTML & CSS (SASS)</li>
                           <li>Wordpress CMS</li>
-                          <li>SaaS</li>
+                          <li>Github</li>
                         </ul>
                     </React.Fragment>,
         link: 'https://employersolutions.pixeljunctiondemo.co.uk/'
@@ -27,11 +27,19 @@ export default [
 
     {
         img : lodgebywindermere,
-        preview: 'This is a title',
+        preview: 'Lodge By Windermere',
         content :   <React.Fragment>
-                        <h3>Another Title</h3>
-                        <p>Maecenas euismod mi odio, a dapibus eros maximus gravida. Pellentesque vel nisi ut libero convallis congue ut id orci. Donec sed dui tellus. Cras bibendum convallis quam accumsan egestas.</p>
-                    </React.Fragment>,
+                        <h3>Lodge By Windermere</h3>
+                        <a href="https://www.pixeljunction.co.uk/">@PixelJunction</a>
+                        <p>This is another site worked on whilst under Pixel Junction. But the build was a new client and as a completely fresh site</p>
+                        <p>The site was a simple yet effective one pager for a Lake District lodge. It offers a basic overview of the accomodation whilst maintianing a professional and sleek feel without overcomplicating the end goal for the user</p>
+                        <p>Technologies Used:</p>
+                        <ul>
+                          <li>PHP</li>
+                          <li>HTML & CSS (SASS)</li>
+                          <li>Wordpress CMS</li>
+                          <li>Github</li>
+                        </ul>                    </React.Fragment>,
         link: 'https://lodgebywindermere.co.uk/'
     },
 
@@ -49,7 +57,7 @@ export default [
                           <li>Javascript</li>
                           <li>React</li>
                           <li>Netlify</li>
-                          <li>SaaS</li>
+                          <li>CSS SASS</li>
                         </ul>
                     </React.Fragment>
     }
