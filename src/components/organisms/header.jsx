@@ -12,7 +12,7 @@ class Header extends Component{
 
             <Gitfork/>
 
-            <Hero title="Will Law" tagline="Web Developer">
+            <Hero title="Will Law" tagline="Web Developer & IT Enthusiast">
 
             <p>📍 Ulverston, Cumbria, United Kingdom</p>
 
