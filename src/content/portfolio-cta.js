@@ -27,7 +27,7 @@ export default [
 
     {
         img : lodgebywindermere,
-        preview: 'This is a title',
+        preview: 'Lodge By Windermere',
         content :   <React.Fragment>
                         <h3>Lodge By Windermere</h3>
                         <a href="https://www.pixeljunction.co.uk/">@PixelJunction</a>
