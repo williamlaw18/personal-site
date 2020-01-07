@@ -1,10 +1,29 @@
 import React from 'react';
 
 import employersolutions from '../assets/images/es.png';
-import lodgebywindermere from '../assets/images/lodge.png';
+import as3performance from '../assets/images/as3.jpg';
 import personalsite from '../assets/images/portfolio.png';
 
 export default [
+
+      {
+        img : as3performance,
+        preview: 'AS3 Performance',
+        content :   <React.Fragment>
+                        <h3>AS3 Performance</h3>
+                        <a href="https://www.verse.co.uk/">@Verse Ltd</a>
+                        <p>I went into this project with no prior understanding of shopify and hadn't even worked on a E-commerse site before where I was expected to deliver the project to a deadline by myself</p>
+                        <p>The site is easy to navigate and effectively displays a vast ammount of products without any noticable load times. It was a totally bespoke site and written from scratch in order to achive the best performance and editability possibly</p>
+                        <p>Technologies Used:</p>
+                        <ul>
+                          <li>Twig</li>
+                          <li>HTML & CSS (SASS)</li>
+                          <li>Javascript</li>
+                          <li>Shopify CMS</li>
+                          <li>Github</li>
+                        </ul>                    </React.Fragment>,
+        link: 'https://as3performance.myshopify.com/'
+    },
 
     {
         img : employersolutions,
@@ -23,24 +42,6 @@ export default [
                         </ul>
                     </React.Fragment>,
         link: 'https://employersolutions.pixeljunctiondemo.co.uk/'
-    },
-
-    {
-        img : lodgebywindermere,
-        preview: 'Lodge By Windermere',
-        content :   <React.Fragment>
-                        <h3>Lodge By Windermere</h3>
-                        <a href="https://www.pixeljunction.co.uk/">@PixelJunction</a>
-                        <p>This is another site worked on whilst under Pixel Junction. But the build was a new client and as a completely fresh site</p>
-                        <p>The site was a simple yet effective one pager for a Lake District lodge. It offers a basic overview of the accomodation whilst maintianing a professional and sleek feel without overcomplicating the end goal for the user</p>
-                        <p>Technologies Used:</p>
-                        <ul>
-                          <li>PHP</li>
-                          <li>HTML & CSS (SASS)</li>
-                          <li>Wordpress CMS</li>
-                          <li>Github</li>
-                        </ul>                    </React.Fragment>,
-        link: 'https://lodgebywindermere.co.uk/'
     },
 
     {
