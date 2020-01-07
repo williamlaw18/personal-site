@@ -13,9 +13,9 @@ const Fixed = () => {
 
                 <div className="fixed__wrapper-popout">
 
-                    <a href="mailto:21will01law00@gmail.com">
+                    <a href="../assets/cv.docx" download>
                         <span>
-                            Contact me!
+                            Download CV?
                         </span>
                     </a>
 
