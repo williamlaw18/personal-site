@@ -28,13 +28,19 @@ class CtaSingle extends Component{
 
                         {this.props.children}
 
-                        {this.props.link &&
+                        
                           <div className="button__container">
-                            <a className="button button__primary" href={this.props.link}>
-                              Check it out!
-                            </a>
+                            {this.props.link &&
+                                <a className="button button__primary" href={this.props.link}>
+                                Check it out!
+                                </a>
+                            }
+                            {!this.props.link &&
+                                <a className="button button__primary" href="#">
+                                    Not Currently Available!
+                                </a>
+                            }
                           </div>
-                        }
 
                     </div>
 
