@@ -21,8 +21,7 @@ export default [
                           <li>Javascript</li>
                           <li>Shopify CMS</li>
                           <li>Github</li>
-                        </ul>                    </React.Fragment>,
-        link: 'https://as3performance.myshopify.com/'
+                        </ul>                    </React.Fragment>
     },
 
     {
