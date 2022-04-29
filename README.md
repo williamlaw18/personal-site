@@ -1,24 +1,55 @@
-# Personal site (WIP) #
+# Nano React App Default Javascript Template
 
-Project was started with create-react-app. and Hosted on netlify
-- use npm install to install project dependencies
-- use npm start to develop locally.
-- netlify is configured to deploy automatically from the the build folder in the deploy branch.
+The default template project for [nano-react-app](https://github.com/nano-react-app/nano-react-app).
 
-## Why Netlify? ##
+- `npm start` — This will spawn a development server with a default port of `3000`.
+- `npm run build` — This will output a production build in the `dist` directory.
 
-I've only recently come across netlify and I'm honestly blown away.
+## Custom port
 
-- They offer totally free static site hosting. 
-- Git integrated deploy enviroment. 
-- Teams and site project managements systems.
-- A Really modern, clean interface.
+You can use the `-p` flag to specify a port for development. To do this, you can either run `npm start` with an additional flag:
 
-As the modern web starts to lean toward Node based stacks, a server side language is no longer required to have complex and content heavy sites when using a library like react and a simple cms like netlify or ghost.
+```
+npm start -- --port 1234
+```
 
-## Site Address ##
+Or edit the `start` script directly:
 
-Current site link: 
-https://happy-roentgen-e5986e.netlify.com/
+```
+vite --port 1234
+```
 
-Need to point old https://williamlawdev.com/ domain to new server
+## Adding styles
+
+You can use CSS files with simple ES2015 `import` statements anywhere in your Javascript:
+
+```js
+import "./index.css";
+```
+
+## Babel transforms
+
+The Babel preset [babel-preset-nano-react-app](https://github.com/nano-react-app/babel-preset-nano-react-app) is used to support the same transforms that Create React App supports.
+
+The Babel configuration lives inside `package.json` and will override an external `.babelrc` file, so if you want to use `.babelrc` remember to delete the `babel` property inside `package.json`.
+
+
+## Deploy to GitHub Pages
+
+You can also deploy your project using GitHub pages.
+First install the `gh-pages` [package](https://github.com/tschaub/gh-pages):
+
+`npm i -D gh-pages`
+
+Use the following scripts for deployment:
+
+```
+"scripts": {
+  "start": "vite",
+  "build": "vite build",
+  "predeploy": "rm -rf dist && vite build",
+  "deploy": "gh-pages -d dist"
+},
+```
+
+Then follow the normal procedure in GitHub Pages and select the `gh-pages` branch.
