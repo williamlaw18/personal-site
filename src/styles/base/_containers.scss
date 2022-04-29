@@ -1,0 +1,6 @@
+
+@use '/src/styles/variables/variables';
+
+.pagecontainer{
+    background-color: darken(variables.$white, 3%);
+}

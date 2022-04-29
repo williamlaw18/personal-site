@@ -21,13 +21,13 @@ const Home = () => {
 
     return (
 
-      <React.Fragment>
+      <main>
 
         <Sidebar/>
 
-        <div className="container__page">
+        <div class="pagecontainer">
 
-        <section>
+        <section className='Projects cardwrapper'>
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project}/>
           ))}
@@ -42,7 +42,7 @@ const Home = () => {
 
         </div>
 
-      </React.Fragment>
+      </main>
 
     );
 }

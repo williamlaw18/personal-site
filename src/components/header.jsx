@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Header extends Component{
+import '../styles/components/header.scss';
 
-  render(){
+const Header = () => {
     return (
-        <header>
+        <header className='header'>
 
-            <h1>Title</h1>
+            <span className='header__logo'>&#128175;</span>
+
+            <h1 className='header__title'>William Law</h1>
 
         </header>
     );
-  }
 }
 
 export default Header;

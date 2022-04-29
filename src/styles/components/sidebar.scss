@@ -1,5 +1,9 @@
+
 @use '/src/styles/variables/variables';
 
 .sidebar{
-    background-color: variables.$color_basic;
+    background-color: variables.$color_secondary;
+    height: 100%;
+    position: fixed;
+    width: variables.$nav_width;
 }

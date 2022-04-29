@@ -1,0 +1,6 @@
+
+@use '/src/styles/variables/variables';
+
+footer{
+    margin-left: variables.$nav_width;
+}

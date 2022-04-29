@@ -1,6 +1,41 @@
 
 @use '/src/styles/variables/variables';
 
+.cardwrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .card{
     background-color: variables.$white;
+    position: relative;
+    width: 250px;
+    margin-left: variables.$nav_width;
+    margin-bottom: variables.$nav_width /2;
+    cursor: pointer;
+
+    &__content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: variables.$white;
+        border-radius: 100%;
+        text-align: center;
+        padding: 70px;
+
+        &-inner{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__img{
+        height: 350px;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
 }

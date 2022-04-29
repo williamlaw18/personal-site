@@ -5,9 +5,9 @@ import '../styles/components/sidebar.scss';
 const Sidebar = () => {
 
     return (
-        <section className="sidebar">
-            <a>Links</a>
-        </section>
+        <nav className="sidebar">
+            
+        </nav>
     )
 }
 
