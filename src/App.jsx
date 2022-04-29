@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './styles/index.scss'
 
 // Top level Modules
 import Header from './components/header'
@@ -12,15 +11,16 @@ import PageRouter from './Router'
 const App = () => {
 
   return (
-    <div className="container__all">
+    <React.Fragment>
 
-    <Header/>
+      <Header/>
 
-    <PageRouter/>
+      <PageRouter/>
 
-    <Footer/>
+      <Footer/>
+      
+    </React.Fragment>
 
-  </div>
   )
 } 
 

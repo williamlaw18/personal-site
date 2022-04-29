@@ -5,35 +5,67 @@ const useContentful = () => {
 
     //api call
     const client = createClient({
-        space: "d9hxalzwywnv",
-        accessToken: "Am5rGRca_KMTRdK6i3cyeqCFKO4320dkHhHNEydfByc",
+        space: "e212u4s5fc9a",
+        accessToken: "Zz3ggkGEOFFdPhu_P6kEXIrti74ACxuYchzgTQLufAs",
         host: "preview.contentful.com"
     })
 
-    const getPersons = async () => {
+    const getSpaceName = async () => {
+        try{
+            const spaceName = client.getSpace()
+            return spaceName
+        } catch(error){
+            console.log(error)
+        }
+    }
+
+    const getProjects = async () => {
         try{
             // get content by field
             const entries = client.getEntries({
-                content_type: "person",
+                content_type: "project",
                 select: "fields"
             })
 
             const sanitizedEntries = (await entries).items.map((item) => {
-                const person = item.fields
+                const project = item.fields
                 return{
                     ...item.fields,
-                    person
+                    project
                 }
             })
 
             return sanitizedEntries
 
         } catch(error){
-            console.log(`Error fetching authors: ${error}`)
+            console.log(`Error fetching projects: ${error}`)
         }
     };
 
-    return { getPersons }
+    const getExperiences = async () => {
+        try{
+            // get content by field
+            const entries = client.getEntries({
+                content_type: "experience",
+                select: "fields"
+            })
+
+            const sanitizedEntries = (await entries).items.map((item) => {
+                const experience = item.fields
+                return{
+                    ...item.fields,
+                    experience
+                }
+            })
+
+            return sanitizedEntries
+
+        } catch(error){
+            console.log(`Error fetching experiences: ${error}`)
+        }
+    };
+
+    return { getSpaceName, getProjects, getExperiences }
 }
 
 export default useContentful

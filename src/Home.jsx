@@ -1,36 +1,49 @@
 import React, { Component, useEffect, useState } from 'react';
-import './styles/index.scss'
 
 import Section from './components/section';
-import PersonCard from './components/person';
+import ProjectCard from './components/projectCard';
+import ExperienceCard from './components/experienceCard';
 import useContentful from './useContentful';
+import Sidebar from './components/sidebar';
+
+import './styles/base/base.scss';
 
 const Home = () => {
 
-    const [persons, setPersons] = useState([])
-    const { getPersons } = useContentful()
-    const [count, setCount] = useState(0)
+    const [projects, setProjects] = useState([])
+    const [experiences, setExperiences] = useState([])
+    const { getProjects, getExperiences } = useContentful()
 
     useEffect(() => {
-      getPersons().then((response) => setPersons(response))
+      getProjects().then((response) => setProjects(response));
+      getExperiences().then((response) => setExperiences(response));
     }, [])
 
     return (
-      <div className="container__page">
 
-        <Section>
+      <React.Fragment>
 
-          <p>contents</p>
+        <Sidebar/>
 
-        </Section>
+        <div className="container__page">
 
-        <button onClick={() => setCount(count + 1)}>{count}</button>
+        <section>
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project}/>
+          ))}
+        </section>
 
-        {persons.map((person, index) => (
-          <PersonCard key={index} person={person}/>
-        ))}
 
-      </div>
+        <section className="Experiences">
+          {experiences.map((experience, index) => (
+            <ExperienceCard key={index} experience={experience}/>
+          ))}
+        </section>
+
+        </div>
+
+      </React.Fragment>
+
     );
 }
 
