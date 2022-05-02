@@ -1,0 +1,9 @@
+
+@use '/src/styles/variables/variables';
+
+.page{
+
+    &__content{
+        max-width: 800px;
+    }
+}

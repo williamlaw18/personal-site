@@ -1,0 +1,39 @@
+
+@use '/src/styles/variables/variables';
+
+.hero{
+    height: calc(100vh);
+    background-color: variables.$color_secondary;
+
+    &__wrapper{
+        display: grid;
+        position: relative;
+        grid-template-columns: 40% 60%;
+        height: 100%;
+        
+        &::after{
+            content: '';
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            right: 70%;
+            top: 0px;
+            background-color: variables.$color_primary;
+            transform: translate(100%);
+            border-radius: 0px 0px 0px 250px;
+        }
+    }
+
+    &__content{
+        z-index: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        > *{
+            color: variables.$color_secondary;
+        }
+    }
+}

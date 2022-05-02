@@ -5,6 +5,10 @@ body{
     background-color:variables.$offwhite;
 }
 
+main{
+    position: relative;
+}
+
 .pagecontainer{
     max-width: 1200px;
     margin: auto;

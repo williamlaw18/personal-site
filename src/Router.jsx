@@ -31,7 +31,7 @@ const PageRouter = () => {
 
       <BrowserRouter>
 
-      <Routes>
+      <Routes >
           <Route path="/" element={<Home/>} />
 
           {projects.map((page , index) =>

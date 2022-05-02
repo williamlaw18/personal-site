@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px; 
+    padding: 40px 0px;
     @media(min-width: variables.$tablet_lower){
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 30px;
@@ -17,8 +18,10 @@
 
 .card{
     background-color: variables.$white;
+    border-radius: 30px;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
 
     &__content{
         position: absolute;
@@ -29,6 +32,7 @@
         border-radius: 100%;
         text-align: center;
         padding: 70px;
+        transition: all .3s;
 
         &-inner{
             position: absolute;
@@ -43,5 +47,19 @@
         width: 100%;
         object-fit: cover;
         display: block;
+    }
+
+    &.loading-false{
+        box-shadow: 3px 3px 15px -5px variables.$color_basic;
+    }
+
+    &.wide{
+        grid-column: span 2;
+    }
+
+    &:hover{
+        .card__content{
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
     }
 }

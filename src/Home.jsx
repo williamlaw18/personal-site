@@ -1,8 +1,8 @@
 import React, { Component, useEffect, useState } from 'react';
 
 import Section from './components/section';
-import ProjectCard from './components/projectCard';
-import ExperienceCard from './components/experienceCard';
+import Card from './components/card';
+import Hero from './components/hero';
 import useContentful from './useContentful';
 import Loader from './components/loader';
 
@@ -27,19 +27,19 @@ const Home = () => {
 
       <React.Fragment>
         
-        <main className="pagecontainer">
+        <main>
 
           {loading == true && <Loader />}
 
-          <section className='Projects cardwrapper'>
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project}/>
-            ))}
-          </section>
+          <Hero />
 
-          <section className="Experiences cardwrapper">
+          <section className='Projects cardwrapper pagecontainer'>
+            {projects.map((item, index) => (
+              <Card key={index} card={item} loading={loading} width={"small"}/>
+            ))}
+
             {experiences.map((experience, index) => (
-              <ExperienceCard key={index} experience={experience}/>
+              <Card key={index} card={experience} loading={loading} width={"wide"}/>
             ))}
           </section>
 
