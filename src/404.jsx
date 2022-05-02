@@ -7,10 +7,11 @@ const BadPage = () => {
 
       <React.Fragment>
 
-          <main className="pagecontainer">
-              <h2>404</h2>
-              <Link to={'/'}>Back to Home page</Link>
-          </main>
+        <main className="pagecontainer">
+            <h1>Oops! 404</h1>
+            <h2>Missing page</h2>
+            <Link to={'/'}>Take me back!</Link>
+        </main>
           
       </React.Fragment>
 
