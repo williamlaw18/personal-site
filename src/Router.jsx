@@ -10,10 +10,10 @@ import Page from './Page';
 const PageRouter = () => {
 
   const [entries, setEntries] = useState([])
-  const { getAllEntries } = useContentful()
+  const { getEntries } = useContentful()
 
   useEffect(() => {
-    getAllEntries().then((response) => setEntries(response));
+    getEntries('project').then((response) => setEntries(response));
   }, [])
 
   return (
@@ -22,18 +22,8 @@ const PageRouter = () => {
           <Route path="/" element={<Home/>} />
           <Route path="*" element={<BadPage/>} />
 
-          {entries.map((page) => {
-            console.log(page.item.fields.title)
-          })}
-
           {entries.map((page , index) =>
-
-            <Route path={
-              `/${((page.item.fields.title).replaceAll(" ", "_")).replaceAll("?", "").toLowerCase()}`
-            }
-            element={<Page content={page.item.fields} />}
-            key={index}
-            />
+            <Route path={(page.title).replaceAll(" ", "_").toLowerCase()} element={<Page content={page} />} key={index}/>
           )}
           
       </Routes>

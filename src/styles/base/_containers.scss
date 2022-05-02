@@ -9,7 +9,7 @@ main{
     max-width: 1200px;
 
     margin-left: variables.$nav_width;
-    margin-right: variables.$nav_width / 4; 
+    margin-right: variables.$nav_width * 0.25; 
 
     @media(min-width: variables.$desktop_lower){
         margin: auto;

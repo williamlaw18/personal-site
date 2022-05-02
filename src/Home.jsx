@@ -12,11 +12,11 @@ const Home = () => {
 
     const [projects, setProjects] = useState([])
     const [experiences, setExperiences] = useState([])
-    const { getProjects, getExperiences } = useContentful()
+    const { getEntries } = useContentful()
 
     useEffect(() => {
-      getProjects().then((response) => setProjects(response));
-      getExperiences().then((response) => setExperiences(response));
+      getEntries('project').then((response) => setProjects(response));
+      getEntries('experience').then((response) => setExperiences(response));
     }, [])
 
     return (

@@ -38,53 +38,30 @@ const useContentful = () => {
         }
     }
 
-    const getProjects = async () => {
+    const getEntries = async (type) => {
         try{
             // get content by field
             const entries = client.getEntries({
-                content_type: "project",
+                content_type: type,
                 select: "fields"
             })
 
             const sanitizedEntries = (await entries).items.map((item) => {
-                const project = item.fields
+                const type = item.fields
                 return{
                     ...item.fields,
-                    project
+                    type
                 }
             })
 
             return sanitizedEntries
 
         } catch(error){
-            console.log(`Error fetching projects: ${error}`)
+            console.log(`Error fetching entries of type ${type}: ${error}`)
         }
-    };
+    }
 
-    const getExperiences = async () => {
-        try{
-            // get content by field
-            const entries = client.getEntries({
-                content_type: "experience",
-                select: "fields"
-            })
-
-            const sanitizedEntries = (await entries).items.map((item) => {
-                const experience = item.fields
-                return{
-                    ...item.fields,
-                    experience
-                }
-            })
-
-            return sanitizedEntries
-
-        } catch(error){
-            console.log(`Error fetching experiences: ${error}`)
-        }
-    };
-
-    return { getAllEntries, getSpaceName, getProjects, getExperiences }
+    return { getEntries, getAllEntries, getSpaceName }
 }
 
 export default useContentful
