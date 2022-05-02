@@ -21,28 +21,27 @@ const Home = () => {
 
     return (
 
-      <main>
+      <React.Fragment>
+        
+      <Sidebar/>
+        
+        <main className="pagecontainer">
 
-        <Sidebar/>
+          <section className='Projects cardwrapper'>
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project}/>
+            ))}
+          </section>
 
-        <div class="pagecontainer">
+          <section className="Experiences cardwrapper">
+            {experiences.map((experience, index) => (
+              <ExperienceCard key={index} experience={experience}/>
+            ))}
+          </section>
 
-        <section className='Projects cardwrapper'>
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project}/>
-          ))}
-        </section>
-
-
-        <section className="Experiences">
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience}/>
-          ))}
-        </section>
-
-        </div>
-
-      </main>
+        </main>
+        
+      </React.Fragment>
 
     );
 }

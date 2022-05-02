@@ -1,6 +1,26 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+@use '/src/styles/variables/variables';
+
+// Titles
 
 h1, h2, h3, h4, h5{
-    font-family: 'Manrope', sans-serif;
+    font-family: variables.$font_body;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 1rem;
+
+    @media(min-width: variables.$tablet_lower){
+        font-size: 1.2rem;
+    }
+}
+
+// Content
+
+p, span, ul, li, input, select, button{
+    font-family: variables.$font_body;
 }

@@ -5,9 +5,11 @@ import '../styles/components/footer.scss';
 const Footer = () => {
 
     return(
-        <footer>
+        <footer className="footer">
 
-            <p>footer</p>
+            <div className="footer__container pagecontainer">
+
+            </div>
 
         </footer>
     )

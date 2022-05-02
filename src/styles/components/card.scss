@@ -2,16 +2,22 @@
 @use '/src/styles/variables/variables';
 
 .cardwrapper{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px; 
+    @media(min-width: variables.$tablet_lower){
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    }
+    
+    @media(min-width: variables.$laptop_lower){
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 
 .card{
     background-color: variables.$white;
     position: relative;
-    width: 250px;
-    margin-left: variables.$nav_width;
-    margin-bottom: variables.$nav_width /2;
     cursor: pointer;
 
     &__content{
