@@ -4,6 +4,15 @@
 .header{
     height: variables.$header_height;
     position: fixed;
+    width: 100%;
+    z-index: 1;
+    padding: 25px;
+    top: 0;
+    box-sizing: border-box;
+
+    &__logo{
+        font-size: 3rem;
+    }
 
     &__tagline{
         margin-top: 20px;

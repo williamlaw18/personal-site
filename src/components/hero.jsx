@@ -5,16 +5,12 @@ import '../styles/components/hero.scss';
 
 const Hero = (content) => {
     return(
-        <section class="hero">
-
-            <div className='hero__background'>
-
-            </div>
+        <section className="hero">
 
             <div className="hero__wrapper pagecontainer">
                 
                 <div className="hero__image">
-
+                    <span>🍐</span>
                 </div>
 
                 <div className="hero__content">

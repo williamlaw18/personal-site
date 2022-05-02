@@ -1,27 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import useContentful from './useContentful';
 
-// Top level Modules
-import Header from './components/header'
-import Footer from './components/footer'
-
-// Page router
-import PageRouter from './Router'
+import Home from './Home';
+import BadPage from './404';
+import Page from './Page';
+import Loader from './components/loader';
 
 const App = () => {
+
+  const [projects, setProjects] = useState([])
+  const [experiences, setExperiences] = useState([])
+  const [entries, setEntries] = useState([])
+  const { getEntries } = useContentful()
+
+  const [loading, setLoading] = useState(false)
+
+  useEffect(async () => {
+    setLoading(true)
+    setProjects(await getEntries('project'))
+    setExperiences(await getEntries('experience'))
+    setLoading(false)
+  }, [])
 
   return (
     <React.Fragment>
 
-      <Header/>
+      {loading == true && <Loader />}
 
-      <PageRouter/>
+      <BrowserRouter>
 
-      <Footer/>
-      
+      <Routes >
+          <Route path="/" element={<Home/>} />
+
+          {projects.map((page , index) =>
+            <Route path={page.url} element={<Page content={page} />} key={index}/>
+          )}
+
+          <Route path="*" element={<BadPage/>} />
+            
+        </Routes>
+      </BrowserRouter>
+
     </React.Fragment>
-
-  )
+  );
 } 
 
 export default App

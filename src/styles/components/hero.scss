@@ -4,33 +4,61 @@
 .hero{
     height: calc(100vh);
     background-color: variables.$color_secondary;
+    max-height: 1500px;
 
     &__wrapper{
         display: grid;
         position: relative;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 1fr;
         height: 100%;
+
+        @media(min-width: variables.$tablet_lower){
+            grid-template-columns: 40% 60%;
+        }
         
         &::after{
             content: '';
             display: block;
             width: 100vw;
             height: 100vh;
+            max-height: 1500px;
             position: absolute;
-            right: 70%;
+            right: calc(100% - 40px);
             top: 0px;
             background-color: variables.$color_primary;
             transform: translate(100%);
             border-radius: 0px 0px 0px 250px;
+            @media(min-width: variables.$tablet_lower){
+                right: 70%;
+            }
+        }
+    }
+
+    &__image{
+        display: none;
+        @media(min-width: variables.$tablet_lower){
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            z-index: 1;
+        }
+        span{
+            font-size: 7rem;
+            @media(min-width: variables.$tablet_lower){
+                font-size: 10rem;
+            }
         }
     }
 
     &__content{
         z-index: 1;
-        padding: 40px;
+        padding: 60px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @media(min-width: variables.$tablet_lower){
+            padding: 40px;
+        }
         
         > *{
             color: variables.$color_secondary;

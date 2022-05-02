@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+import './styles/base/base.scss';
+
+// Top level Modules
+import Header from './components/header'
+import Footer from './components/footer'
+
 import './styles/components/page.scss';
 
 const Page = (content) => {
@@ -18,6 +24,8 @@ const Page = (content) => {
     return(
 
         <React.Fragment>
+
+            <Header/>
 
             <main className="pagecontainer">
 
@@ -38,6 +46,8 @@ const Page = (content) => {
                 </section>
 
             </main>
+
+            <Footer />
             
         </React.Fragment>
 

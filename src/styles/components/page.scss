@@ -2,6 +2,7 @@
 @use '/src/styles/variables/variables';
 
 .page{
+    margin-top: variables.$header_height;
 
     &__content{
         max-width: 800px;
