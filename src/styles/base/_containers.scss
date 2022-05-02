@@ -1,18 +1,12 @@
 
 @use '/src/styles/variables/variables';
 
-main{
+body{
     background-color:variables.$offwhite;
 }
 
 .pagecontainer{
     max-width: 1200px;
-
-    margin-left: variables.$nav_width;
-    margin-right: variables.$nav_width * 0.25; 
-
-    @media(min-width: variables.$desktop_lower){
-        margin: auto;
-    }
+    margin: auto;
     
 }

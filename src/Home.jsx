@@ -4,7 +4,6 @@ import Section from './components/section';
 import ProjectCard from './components/projectCard';
 import ExperienceCard from './components/experienceCard';
 import useContentful from './useContentful';
-import Sidebar from './components/sidebar';
 
 import './styles/base/base.scss';
 
@@ -22,8 +21,6 @@ const Home = () => {
     return (
 
       <React.Fragment>
-        
-      <Sidebar/>
         
         <main className="pagecontainer">
 

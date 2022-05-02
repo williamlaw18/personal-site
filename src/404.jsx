@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class About extends Component {
-  render() {
-    return (
-      <div className="container__page">
-        
-        <div className="container">
-            <h3>404</h3>
+const BadPage = () => {
 
-            <Link className="App-link" to="/">Return Home</Link>
-        </div>
+  return(
 
-      </div>
-    );
-  }
+      <React.Fragment>
+
+          <main className="pagecontainer">
+              <h2>404</h2>
+              <Link to={'/'}>Back to Home page</Link>
+          </main>
+          
+      </React.Fragment>
+
+  )
 }
 
-export default About;
+
+export default BadPage;

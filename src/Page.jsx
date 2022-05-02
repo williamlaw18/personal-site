@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Sidebar from './components/sidebar';
 
 const Page = (content) => {
 
@@ -12,8 +11,6 @@ const Page = (content) => {
     return(
 
         <React.Fragment>
-
-            <Sidebar />
             
             <main className="pagecontainer">
                 {fields.title}
