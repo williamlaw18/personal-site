@@ -6,7 +6,7 @@ import '../styles/components/card.scss';
 const ProjectCard = ({project}) => {
 
     return (
-        <Link className="projectCard card" to={`/${project.title.replaceAll(" ", "_").toLowerCase()}`}>
+        <Link className="projectCard card" to={`${project.url}`}>
             <div className="card__content">
                 <div className="card__content-inner">
                     <h2>{project.title}</h2>

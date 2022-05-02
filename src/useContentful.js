@@ -10,25 +10,6 @@ const useContentful = () => {
         host: "preview.contentful.com"
     })
 
-    const getAllEntries = async () => {
-        try{
-            // get content by field
-            const entries = client.getEntries()
-
-            const sanitizedEntries = (await entries).items.map((item) => {
-                const entry = item
-                return{
-                    item
-                }
-            })
-
-            return sanitizedEntries
-
-        } catch(error){
-            console.log(`Error fetching projects: ${error}`)
-        }
-    };
-
     const getSpaceName = async () => {
         try{
             const spaceName = client.getSpace()
@@ -47,10 +28,12 @@ const useContentful = () => {
             })
 
             const sanitizedEntries = (await entries).items.map((item) => {
-                const type = item.fields
+                const entry = item.fields
+                entry['type'] = type
+                entry['url'] = `/${encodeURIComponent(entry.type)}/${encodeURIComponent(entry.title)}`
                 return{
                     ...item.fields,
-                    type
+                    item
                 }
             })
 
@@ -61,7 +44,7 @@ const useContentful = () => {
         }
     }
 
-    return { getEntries, getAllEntries, getSpaceName }
+    return { getEntries, getSpaceName }
 }
 
 export default useContentful

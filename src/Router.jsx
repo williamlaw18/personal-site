@@ -35,7 +35,7 @@ const PageRouter = () => {
           <Route path="/" element={<Home/>} />
 
           {projects.map((page , index) =>
-            <Route path={(page.title).replaceAll(" ", "_").toLowerCase()} element={<Page content={page} />} key={index}/>
+            <Route path={page.url} element={<Page content={page} />} key={index}/>
           )}
 
           <Route path="*" element={<BadPage/>} />
