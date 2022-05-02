@@ -5,7 +5,7 @@ import '../styles/components/loader.scss';
 const Loader = () => {
     return(
         <div className='loader'>
-            Loading
+            <div className='loader__spinner'></div>
         </div>
     )
 }

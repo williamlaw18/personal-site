@@ -4,6 +4,7 @@ import Section from './components/section';
 import ProjectCard from './components/projectCard';
 import ExperienceCard from './components/experienceCard';
 import useContentful from './useContentful';
+import Loader from './components/loader';
 
 import './styles/base/base.scss';
 
@@ -13,9 +14,13 @@ const Home = () => {
     const [experiences, setExperiences] = useState([])
     const { getEntries } = useContentful()
 
-    useEffect(() => {
-      getEntries('project').then((response) => setProjects(response));
-      getEntries('experience').then((response) => setExperiences(response));
+    const [loading, setLoading] = useState(false)
+
+    useEffect(async () => {
+      setLoading(true)
+      setProjects(await getEntries('project'))
+      setExperiences(await getEntries('experience'))
+      setLoading(false)
     }, [])
 
     return (
@@ -23,6 +28,8 @@ const Home = () => {
       <React.Fragment>
         
         <main className="pagecontainer">
+
+          {loading == true && <Loader />}
 
           <section className='Projects cardwrapper'>
             {projects.map((project, index) => (

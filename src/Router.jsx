@@ -10,25 +10,31 @@ import Loader from './components/loader';
 
 const PageRouter = () => {
 
+  const [projects, setProjects] = useState([])
+  const [experiences, setExperiences] = useState([])
   const [entries, setEntries] = useState([])
-  const [loaded, setLoaded] = useState(false);
   const { getEntries } = useContentful()
 
-  useEffect(() => {
-    getEntries('project').then((response) => setEntries(response));
-    setLoaded(true);
+  const [loading, setLoading] = useState(false)
+
+  useEffect(async () => {
+    setLoading(true)
+    setProjects(await getEntries('project'))
+    setExperiences(await getEntries('experience'))
+    setLoading(false)
   }, [])
 
   return (
     <React.Fragment>
-      
-      {loaded == false && <Loader />}
+
+      {loading == true && <Loader />}
 
       <BrowserRouter>
+
       <Routes>
           <Route path="/" element={<Home/>} />
 
-          {entries.map((page , index) =>
+          {projects.map((page , index) =>
             <Route path={(page.title).replaceAll(" ", "_").toLowerCase()} element={<Page content={page} />} key={index}/>
           )}
 
