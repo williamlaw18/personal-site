@@ -10,7 +10,8 @@ h1, h2, h3, h4, h5{
 
 h1{
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    color: variables.$color_primary;
     
     @media(min-width: variables.$tablet_lower){
         font-size: 4rem;
@@ -18,10 +19,10 @@ h1{
 }
 
 h2{
-    font-size: 2rem;
+    font-size: 1.8rem;
 
     @media(min-width: variables.$tablet_lower){
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 }
 
@@ -42,5 +43,5 @@ p, span, ul, li, input, select, button, a{
 
 a:not([class]){
     background-color: variables.$color_primary;
-    color: variables.$lightgreen;
+    color: variables.$white;
 }

@@ -2,11 +2,6 @@ import React, { Component, useEffect, useState } from 'react';
 
 import './styles/base/base.scss';
 
-// Top level Modules
-import Header from './components/header'
-import Footer from './components/footer'
-
-import Section from './components/section';
 import Card from './components/card';
 import Hero from './components/hero';
 import useContentful from './useContentful';
@@ -18,7 +13,7 @@ const Home = () => {
     const [experiences, setExperiences] = useState([])
     const { getEntries } = useContentful()
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     useEffect(async () => {
       setLoading(true)
@@ -30,8 +25,6 @@ const Home = () => {
     return (
 
       <React.Fragment>
-
-        <Header/>
         
         <main>
 
@@ -54,8 +47,6 @@ const Home = () => {
           </section>
 
         </main>
-
-        <Footer/>
         
       </React.Fragment>
 

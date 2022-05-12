@@ -2,66 +2,64 @@
 @use '/src/styles/variables/variables';
 
 .hero{
-    height: calc(100vh);
-    background-color: variables.$color_secondary;
+    height: calc(100vh - variables.$header_height);
     max-height: 1500px;
-
     &__wrapper{
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr;
-        height: 100%;
+        display: flex;
+    }
+    
+    &__content{
+        padding-top: 25vh;
+        max-width: 500px;
+        z-index: 1;
 
-        @media(min-width: variables.$tablet_lower){
-            grid-template-columns: 40% 60%;
+        &--title{
+            margin: 20px 0px;
         }
-        
-        &::after{
-            content: '';
-            display: block;
-            width: 100vw;
-            height: 100vh;
-            max-height: 1500px;
-            position: absolute;
-            right: calc(100% - 40px);
-            top: 0px;
-            background-color: variables.$color_primary;
-            transform: translate(100%);
-            border-radius: 0px 0px 0px 250px;
-            @media(min-width: variables.$tablet_lower){
-                right: 70%;
-            }
+
+        &--subtitle,&--tagline{
+            margin-bottom: 10px;
         }
+
     }
 
     &__image{
-        display: none;
+        width: 0; 
+        height: 0; 
+        border-top: 40vh solid transparent;
+        border-bottom: 40vh solid transparent; 
+        border-right: 200px solid variables.$color_secondary;
+        right: 0;
+        position: absolute;
         @media(min-width: variables.$tablet_lower){
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            z-index: 1;
+            position: initial;
         }
-        span{
-            font-size: 7rem;
-            @media(min-width: variables.$tablet_lower){
-                font-size: 10rem;
-            }
+
+        &::after{
+            width: 100vw;
+            height: 100%;
+            top: 0;
+            transform: translateX(199px);
+            content: '';
+            display: block;
+            background-color: variables.$color_secondary;
+            position: absolute;
         }
     }
 
-    &__content{
+    &__arrow{
+        width: 0; 
+        height: 0; 
+        right: 0;
+        border-top: 35vh solid transparent;
+        border-bottom: 35vh solid transparent; 
+        border-right: 150px solid variables.$color_highlight;
+        content: '';
+        display: block;
+        position: absolute;
         z-index: 1;
-        padding: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        @media(min-width: variables.$tablet_lower){
-            padding: 40px;
-        }
-        
-        > *{
-            color: variables.$color_secondary;
-        }
+        top: 0;
+        transform: translateY(50%);
     }
+
 }

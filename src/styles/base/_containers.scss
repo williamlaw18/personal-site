@@ -8,6 +8,7 @@ body{
 
 main{
     position: relative;
+    padding-top: variables.$header_height;
 }
 
 .pagecontainer{
@@ -16,4 +17,8 @@ main{
     position: relative;
     padding: 0px 20px;
     box-sizing: border-box;
+
+    @media(min-width: variables.$tablet_lower){
+        padding: 0px 40px;
+    }
 }

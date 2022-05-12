@@ -1,0 +1,7 @@
+
+@use '/src/styles/variables/variables';
+
+.button{
+    background-color: variables.$color_primary;
+    color: variables.$white;
+}

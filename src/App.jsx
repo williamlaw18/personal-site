@@ -3,6 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import useContentful from './useContentful';
 
+// Top level Modules
+import Header from './components/header'
+import Footer from './components/footer'
+
 import Home from './Home';
 import BadPage from './404';
 import Page from './Page';
@@ -15,7 +19,7 @@ const App = () => {
   const [entries, setEntries] = useState([])
   const { getEntries } = useContentful()
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(async () => {
     setLoading(true)
@@ -31,6 +35,8 @@ const App = () => {
 
       <BrowserRouter>
 
+      <Header/>
+
       <Routes >
           <Route path="/" element={<Home/>} />
 
@@ -41,6 +47,9 @@ const App = () => {
           <Route path="*" element={<BadPage/>} />
             
         </Routes>
+
+        <Footer />
+        
       </BrowserRouter>
 
     </React.Fragment>

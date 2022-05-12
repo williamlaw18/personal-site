@@ -20,7 +20,6 @@
 
 .card{
     background-color: variables.$white;
-    border-radius: 30px;
     position: relative;
     cursor: pointer;
     overflow: hidden;
@@ -31,7 +30,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: variables.$color_primary;
-        border-radius: 100%;
         text-align: center;
         padding: 80px;
         transition: all .3s;
@@ -57,29 +55,7 @@
     }
 
     &.loading-false{
-        box-shadow: 3px 3px 15px -5px variables.$color_basic;
-    }
-
-    &:after{
-        content: '';
-        display: block;
-        width: 0px;
-        height: 0px;
-        top: 50%;
-        left: 50%;
-        padding: 80px;
-        border-radius: 50%;
-        background-color: variables.$color_primary;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        transition: all .4s;
-    }
-
-    &:hover{
-        &:after{
-            height: 150%;
-            width: 200%;
-        }
+        box-shadow: 3px 3px 10px -5px variables.$color_basic;
     }
 
     &.wide{

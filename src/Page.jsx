@@ -4,16 +4,14 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import './styles/base/base.scss';
 
-// Top level Modules
-import Header from './components/header'
-import Footer from './components/footer'
+import Loader from './components/loader'
 
 import './styles/components/page.scss';
 
 const Page = (content) => {
 
     const [fields, setFields] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         setLoading(true)
@@ -24,8 +22,6 @@ const Page = (content) => {
     return(
 
         <React.Fragment>
-
-            <Header/>
 
             <main className="pagecontainer">
 
@@ -46,8 +42,6 @@ const Page = (content) => {
                 </section>
 
             </main>
-
-            <Footer />
             
         </React.Fragment>
 
