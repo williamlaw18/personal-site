@@ -2,10 +2,11 @@ import React, { Component, useEffect, useState, useRef } from 'react';
 
 import './styles/base/base.scss';
 
+import useHelper from './useHelper';
+
 import Card from './components/card';
 import Hero from './components/hero';
 import useContentful from './useContentful';
-import useHelper from './useHelper';
 import Loader from './components/loader';
 
 const Home = () => {
@@ -15,19 +16,12 @@ const Home = () => {
     const [projects, setProjects] = useState([])
     const [experiences, setExperiences] = useState([])
     const { getEntries } = useContentful()
-    const { scrollSection } = useHelper();
 
-    //Loading spinner
-    const [loading, setLoading] = useState(true)
-    const [loadtimeout, setLoadtimeout] = useState(false);
-    if (loading == false){
-      const timeout = setTimeout(() => {
-        setLoadtimeout(true);
-      }, 300)
-    }
+    const { scrollSection } = useHelper();
+    const [loading, setLoading] = useState(true);
 
     useEffect(async () => {
-      setLoading(true)
+      setLoading(true);
       setProjects(await getEntries('project'))
       setExperiences(await getEntries('experience'))
       scrollSection(cards, 100);
@@ -38,7 +32,7 @@ const Home = () => {
 
       <main>
 
-        {loadtimeout == false && <Loader loading={loading}/>}
+        <Loader loading={loading}/>
 
         <Hero />
 
@@ -46,11 +40,11 @@ const Home = () => {
 
           <div className='cards__wrapper pagecontainer'>
             {projects.map((item, index) => (
-              <Card key={index} card={item} loading={loading} width={"small"}/>
+              <Card key={index} card={item}  width={"small"}/>
             ))}
 
             {experiences.map((experience, index) => (
-              <Card key={index} card={experience} loading={loading} width={"wide"}/>
+              <Card key={index} card={experience}  width={"wide"}/>
             ))}
           </div>
 

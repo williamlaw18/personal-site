@@ -4,6 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import './styles/base/base.scss';
 
+import useHelper from './useHelper';
 import Loader from './components/loader'
 
 import './styles/components/page.scss';
@@ -11,15 +12,8 @@ import './styles/components/page.scss';
 const Page = (content) => {
 
     const [fields, setFields] = useState([])
-    
-    const [loading, setLoading] = useState(true)
-    const [loadtimeout, setLoadtimeout] = useState(false);
-    if (loading == false){
-        const timeout = setTimeout(() => {
-        console.log('t')
-        setLoadtimeout(true);
-        }, 300)
-    }
+
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(true)
@@ -31,8 +25,8 @@ const Page = (content) => {
 
         <main className="pagecontainer">
 
-            {loadtimeout == false && <Loader loading={loading}/>}
-
+            <Loader loading={loading}/>
+            
             <section className='page'>
 
                 <div className="page__title">
