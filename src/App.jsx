@@ -12,7 +12,9 @@ import Home from './Home';
 import BadPage from './404';
 import Page from './Page';
 import Loader from './components/loader';
+
 import Canvas from './components/canvas';
+import HexEffect from './components/hexEffect';
 
 const App = () => {
 
@@ -27,7 +29,6 @@ const App = () => {
     setLoading(true);
     setProjects(await getEntries('project'))
     setExperiences(await getEntries('experience'))
-    console.log(await experiences)
     setLoading(false)
   }, [])
 
@@ -44,6 +45,8 @@ const App = () => {
           <Route path="/" element={<Home/>} />
 
           <Route path="/bubbles" element={<Canvas />}/>
+
+          <Route path="/test" element={<HexEffect />}/>
 
           {projects.map((page , index) =>
             <Route path={page.url} element={<Page content={page} />} key={index}/>

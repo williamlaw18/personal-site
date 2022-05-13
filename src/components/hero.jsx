@@ -43,6 +43,7 @@ const Hero = (content) => {
 
             <hr className="hero__arrow" style={{transform: `translateY(${70 -scroll / 10}%)`}}>
             </hr>
+            
 
       </section>
     )

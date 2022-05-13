@@ -19,11 +19,13 @@ const Canvas = () => {
             ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
             bubbles.current.forEach((bubble) => {
                 bubble.radius = Math.max(0, bubble.radius - (0.01 * bubble.radius));
+                bubble.x = bubble.x - 0.3;
+                bubble.y = bubble.y - 0.5;
                 ctx.beginPath()
                 ctx.arc(bubble.x, bubble.y, bubble.radius, 0, 2 * Math.PI, false)
                 ctx.fillStyle = "#B4E4FF"
                 ctx.fill()
-            })
+            });
         }
     };
 

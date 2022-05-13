@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BadPage = () => {
@@ -8,9 +8,11 @@ const BadPage = () => {
       <React.Fragment>
 
         <main className="pagecontainer">
-            <h1>Oops! 404</h1>
-            <h2>Missing page</h2>
-            <Link to={'/'}>Take me back!</Link>
+            <section className='page'>
+              <h1>Oops! 404</h1>
+              <h2>Missing page</h2>
+              <Link to={'/'}>Take me back!</Link>
+            </section>
         </main>
           
       </React.Fragment>

@@ -1,4 +1,5 @@
 import React, { Component, useEffect, useState, useRef } from 'react';
+import { isSafari } from 'react-device-detect';
 
 import './styles/base/base.scss';
 
@@ -8,6 +9,8 @@ import Card from './components/card';
 import Hero from './components/hero';
 import useContentful from './useContentful';
 import Loader from './components/loader';
+
+import HexEffect from './components/hexEffect';
 
 const Home = () => {
 
@@ -25,7 +28,8 @@ const Home = () => {
       setProjects(await getEntries('project'))
       setExperiences(await getEntries('experience'))
       setLoading(false);
-      paralxSection(cards, 0.1, 50);
+
+      paralxSection(cards, 0.2);
     }, [])
 
     return (
@@ -49,7 +53,9 @@ const Home = () => {
 
           </div>
 
-          <div className='cards__background' ref={cards}></div>
+          <div className='cards__background' ref={cards}>
+            {isSafari != true && <HexEffect/>}
+          </div>
 
         </section>
 
