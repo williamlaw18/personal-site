@@ -18,23 +18,18 @@
         }
     }
 
-    &:after{
+    &__background{
         content: '';
         display: block;
         position: absolute;
         left: 0%;
         top: 0;
         z-index: -1;
-        width: 0%;
+        width: 100%;
         height: 100%;
-        background-color: vars.$color_secondary;
+        background: linear-gradient(75deg, vars.$color_secondary 0%, vars.$color_primary 35%, vars.$color_highlight 100%); 
         transition: width .5s;
-    }
-
-    &.scrolled{
-        &::after{
-            width: 100%;
-        }
+        transform: translateY(-50px);
     }
 }
 

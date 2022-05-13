@@ -13,6 +13,11 @@
         max-width: 500px;
         z-index: 1;
 
+        > *:not(hr){
+            z-index: 1;
+            position: relative;
+        }
+
         @media(min-height: vars.$tablet_lower){
             padding-top: 25vh;
         }
@@ -23,11 +28,14 @@
 
         &--subtitle,&--tagline{
             margin-bottom: 10px;
+            mix-blend-mode: plus-lighter;
         }
 
     }
 
     &__image{
+        z-index: 1;;
+        top: 0;
         width: 0; 
         height: 0; 
         border-top: 40vh solid transparent;

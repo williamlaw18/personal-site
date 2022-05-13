@@ -17,15 +17,15 @@ const Home = () => {
     const [experiences, setExperiences] = useState([])
     const { getEntries } = useContentful()
 
-    const { scrollSection } = useHelper();
+    const { paralxSection } = useHelper();
     const [loading, setLoading] = useState(true);
 
     useEffect(async () => {
       setLoading(true);
       setProjects(await getEntries('project'))
       setExperiences(await getEntries('experience'))
-      scrollSection(cards, 100);
       setLoading(false);
+      paralxSection(cards, 0.1, 50);
     }, [])
 
     return (
@@ -36,7 +36,7 @@ const Home = () => {
 
         <Hero />
 
-        <section className='cards' ref={cards}>
+        <section className='cards'>
 
           <div className='cards__wrapper pagecontainer'>
             {projects.map((item, index) => (
@@ -46,7 +46,10 @@ const Home = () => {
             {experiences.map((experience, index) => (
               <Card key={index} card={experience}  width={"wide"}/>
             ))}
+
           </div>
+
+          <div className='cards__background' ref={cards}></div>
 
         </section>
 

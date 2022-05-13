@@ -10,7 +10,6 @@ const Loader = (loading) => {
     if (loading.loading == false){
         const timeout = setTimeout(() => {
             setLoadTimeout(false);
-            console.log('tes');
         }, 300)
     }
 

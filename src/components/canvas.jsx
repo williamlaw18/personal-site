@@ -1,26 +1,8 @@
-import React, { useEffect, useState, useCallback, useReducer } from "react";
-  
+import React, { useEffect, useRef } from "react";
+
 const Canvas = () => {
-
-    const [isMounted, toggle] = useReducer((p) => !p, true);
-    const [canvasRef, setCanvasRef] = useState();
-    const [ctx, setCtx] = useState();
-
-    const handleCanvas = useCallback((node) => {
-        setCanvasRef(node);
-        setCtx(node?.getContext("2d"));
-    }, []);
-
-    const [xy, setxy] = useState(0);
-    const [canDraw, setCanDraw] = useState(false);
-    const [bubbles, setBubbles] = useState([]);
- 
-    const canvasDraw = (e) => {
-        setxy(e.nativeEvent.offsetX * e.nativeEvent.offsetY);
-        xy % 10 == 0 ? setCanDraw(true): setCanDraw(false);
-        canDraw && createBubble(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
-        drawBubbles();
-    };
+    const canvasRef = useRef()
+    const bubbles = useRef([])
 
     const createBubble = (x, y) => {
         const bubble = {
@@ -28,27 +10,33 @@ const Canvas = () => {
             y: y,
             radius: 10 + (Math.random() * (100 - 10)) 
         };
-        setBubbles(bubbles => [...bubbles, bubble])
+        bubbles.current = [...bubbles.current, bubble]
     }
 
-    const drawBubbles = useCallback(() => {
-        if (ctx != null){
-            ctx.clearRect(0,0,canvasRef.width,canvasRef.height);
-            bubbles.forEach((bubble) => {
+    const drawBubbles = () => {
+        const ctx = canvasRef.current?.getContext('2d')
+        if (ctx != null) {
+            ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+            bubbles.current.forEach((bubble) => {
                 bubble.radius = Math.max(0, bubble.radius - (0.01 * bubble.radius));
                 ctx.beginPath()
                 ctx.arc(bubble.x, bubble.y, bubble.radius, 0, 2 * Math.PI, false)
                 ctx.fillStyle = "#B4E4FF"
                 ctx.fill()
-            }, [])
+            })
         }
-    });
+    };
+
+    const canvasDraw = (e) => {
+        const canDraw = (e.nativeEvent.offsetX * e.nativeEvent.offsetY) % 10 == 0
+        if (canDraw) createBubble(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+        drawBubbles();
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
-            console.log(ctx);
-            drawBubbles(ctx);
-        }, 100)
+            drawBubbles();
+        }, 10)
         return () => clearInterval(interval);
     }, []);
 
@@ -56,15 +44,15 @@ const Canvas = () => {
         <main className="pagecontainer">
             <section className="page">
                 <h1>Bubbles!</h1>
-                {isMounted && <canvas
+                <canvas
                     onMouseMove={canvasDraw}
-                    ref={handleCanvas}
-                    width={`1000px`}
+                    ref={canvasRef}
+                    width={`1280px`}
                     height={`720px`}
-                />}
+                />
             </section>
         </main>
     );
 }
-  
+
 export default Canvas

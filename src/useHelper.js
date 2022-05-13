@@ -10,7 +10,20 @@ const useHelper = () => {
         });
     }
 
-    return { scrollSection }
+    const paralxSection = (ref, movemultiple, offset) => {
+        const refHeight = ref.current.offsetHeight;
+        window.addEventListener('scroll', () => {
+            const refScroll = ref.current.getBoundingClientRect().top - window.innerHeight
+            const scrollVal = (window.pageYOffset * movemultiple) + offset;
+            if ( refScroll < 0 ){
+                ref.current.style.transform = `translateY(${-scrollVal}px)`;
+                console.log(refHeight)
+                ref.current.style.height = `${refHeight + scrollVal}px`;
+            };
+        });
+    }
+
+    return { scrollSection, paralxSection }
 }
 
 export default useHelper;
