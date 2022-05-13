@@ -1,5 +1,5 @@
 
-@use '/src/styles/variables/variables';
+@use '/src/styles/variables/vars';
 
 .cards{
     &__wrapper{
@@ -7,19 +7,19 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px; 
         padding: 40px 0px;
-        @media(min-width: variables.$tablet_lower){
+        @media(min-width: vars.$tablet_lower){
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 30px;
         }
         
-        @media(min-width: variables.$laptop_lower){
+        @media(min-width: vars.$laptop_lower){
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
     }
 }
 
 .card{
-    background-color: variables.$white;
+    background-color: vars.$white;
     position: relative;
     cursor: pointer;
     overflow: hidden;
@@ -29,7 +29,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: variables.$color_primary;
+        background-color: vars.$color_primary;
         text-align: center;
         padding: 80px;
         transition: all .3s;
@@ -42,7 +42,7 @@
             transform: translate(-50%, -50%);
 
             > *{
-                color: variables.$offwhite;
+                color: vars.$offwhite;
             }
         }
     }
@@ -55,7 +55,7 @@
     }
 
     &.loading-false{
-        box-shadow: 3px 3px 10px -5px variables.$color_basic;
+        box-shadow: 3px 3px 10px -5px vars.$color_basic;
     }
 
     &.wide{

@@ -11,6 +11,7 @@ import Home from './Home';
 import BadPage from './404';
 import Page from './Page';
 import Loader from './components/loader';
+import Canvas from './components/canvas';
 
 const App = () => {
 
@@ -40,6 +41,8 @@ const App = () => {
       <Routes >
           <Route path="/" element={<Home/>} />
 
+          <Route path="/bubbles" element={<Canvas />}/>
+
           {projects.map((page , index) =>
             <Route path={page.url} element={<Page content={page} />} key={index}/>
           )}
@@ -49,7 +52,7 @@ const App = () => {
         </Routes>
 
         <Footer />
-        
+
       </BrowserRouter>
 
     </React.Fragment>

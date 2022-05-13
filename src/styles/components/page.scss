@@ -1,8 +1,8 @@
 
-@use '/src/styles/variables/variables';
+@use '/src/styles/variables/vars';
 
 .page{
-    margin-top: variables.$header_height;
+    margin-top: vars.$header_height;
 
     &__content{
         max-width: 800px;

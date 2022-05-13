@@ -1,17 +1,21 @@
 
-@use '/src/styles/variables/variables';
+@use '/src/styles/variables/vars';
 
 .hero{
-    height: calc(100vh - variables.$header_height);
+    height: calc(100vh - vars.$header_height);
     max-height: 1500px;
     &__wrapper{
         display: flex;
     }
     
     &__content{
-        padding-top: 25vh;
+        padding-top: 15vh;
         max-width: 500px;
         z-index: 1;
+
+        @media(min-height: vars.$tablet_lower){
+            padding-top: 25vh;
+        }
 
         &--title{
             margin: 20px 0px;
@@ -28,10 +32,10 @@
         height: 0; 
         border-top: 40vh solid transparent;
         border-bottom: 40vh solid transparent; 
-        border-right: 200px solid variables.$color_secondary;
+        border-right: 200px solid vars.$color_secondary;
         right: 0;
         position: absolute;
-        @media(min-width: variables.$tablet_lower){
+        @media(min-width: vars.$tablet_lower){
             position: initial;
         }
 
@@ -42,7 +46,7 @@
             transform: translateX(199px);
             content: '';
             display: block;
-            background-color: variables.$color_secondary;
+            background-color: vars.$color_secondary;
             position: absolute;
         }
     }
@@ -53,7 +57,7 @@
         right: 0;
         border-top: 35vh solid transparent;
         border-bottom: 35vh solid transparent; 
-        border-right: 150px solid variables.$color_highlight;
+        border-right: 150px solid vars.$color_highlight;
         content: '';
         display: block;
         position: absolute;

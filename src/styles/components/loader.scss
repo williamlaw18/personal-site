@@ -1,11 +1,11 @@
 
-@use '/src/styles/variables/variables';
+@use '/src/styles/variables/vars';
 
 .loader{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: variables.$offwhite;
+    background-color: vars.$offwhite;
     z-index: 999;
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@
         display: inline-block;
         width: 80px;
         height: 80px;
-        margin-top: 500px;
+        margin-top: 200px;
 
         &:after {
             content: " ";
@@ -23,8 +23,8 @@
             height: 64px;
             margin: 8px;
             border-radius: 50%;
-            border: 6px solid variables.$color_basic;
-            border-color: variables.$color_basic transparent variables.$color_basic transparent;
+            border: 6px solid vars.$color_basic;
+            border-color: vars.$color_basic transparent vars.$color_basic transparent;
             animation: lds-dual-ring 1.2s linear infinite;
           }
           @keyframes lds-dual-ring {

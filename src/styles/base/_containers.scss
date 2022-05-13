@@ -1,14 +1,14 @@
 
-@use '/src/styles/variables/variables';
+@use '/src/styles/variables/vars';
 
 body{
-    background-color:variables.$offwhite;
+    background-color:vars.$offwhite;
     overflow-x: hidden;
 }
 
 main{
     position: relative;
-    padding-top: variables.$header_height;
+    padding-top: vars.$header_height;
 }
 
 .pagecontainer{
@@ -18,7 +18,7 @@ main{
     padding: 0px 20px;
     box-sizing: border-box;
 
-    @media(min-width: variables.$tablet_lower){
+    @media(min-width: vars.$tablet_lower){
         padding: 0px 40px;
     }
 }

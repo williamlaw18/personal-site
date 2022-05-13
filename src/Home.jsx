@@ -24,31 +24,27 @@ const Home = () => {
 
     return (
 
-      <React.Fragment>
-        
-        <main>
+      <main>
 
-          {loading == true && <Loader />}
+        {loading == true && <Loader />}
 
-          <Hero />
+        <Hero />
 
-          <section className='cards pagecontainer'>
+        <section className='cards pagecontainer'>
 
-            <div className='cards__wrapper'>
-              {projects.map((item, index) => (
-                <Card key={index} card={item} loading={loading} width={"small"}/>
-              ))}
+          <div className='cards__wrapper'>
+            {projects.map((item, index) => (
+              <Card key={index} card={item} loading={loading} width={"small"}/>
+            ))}
 
-              {experiences.map((experience, index) => (
-                <Card key={index} card={experience} loading={loading} width={"wide"}/>
-              ))}
-            </div>
+            {experiences.map((experience, index) => (
+              <Card key={index} card={experience} loading={loading} width={"wide"}/>
+            ))}
+          </div>
 
-          </section>
+        </section>
 
-        </main>
-        
-      </React.Fragment>
+      </main>
 
     );
 }

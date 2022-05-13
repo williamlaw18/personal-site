@@ -1,7 +1,7 @@
 
-@use '/src/styles/variables/variables';
+@use '/src/styles/variables/vars';
 
 .footer{
     padding: 40px 0px;
-    background-color: variables.$color_secondary;
+    background-color: vars.$color_secondary;
 }

@@ -1,8 +1,8 @@
 
-@use '/src/styles/variables/variables';
+@use '/src/styles/variables/vars';
 
 .header{
-    height: variables.$header_height;
+    height: vars.$header_height;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -13,7 +13,7 @@
 
     &:before{
         content: '';
-        background-color: variables.$color_primary;
+        background-color: vars.$color_primary;
         display: block;
         width: 100px;
         height: 100%;
@@ -21,7 +21,7 @@
         top: 0;
         left: 0;
         transition: border-radius, width .5s;
-        box-shadow: -10px 0px 20px -10px variables.$color_basic;
+        box-shadow: -10px 0px 20px -10px vars.$color_basic;
     }
 
     &:after{
@@ -29,9 +29,9 @@
         width: 0; 
         height: 0; 
         display: block;
-        border-top: variables.$header_height / 2 solid transparent;
-        border-bottom: variables.$header_height / 2 solid transparent;
-        border-left: 40px solid variables.$color_primary;
+        border-top: vars.$header_height / 2 solid transparent;
+        border-bottom: vars.$header_height / 2 solid transparent;
+        border-left: 40px solid vars.$color_primary;
         position: absolute;
         left: 100px;
         top: 0;
@@ -44,7 +44,7 @@
         position: relative;
 
         span{
-            color: variables.$white;
+            color: vars.$white;
         }
     }
 

@@ -21,29 +21,25 @@ const Page = (content) => {
 
     return(
 
-        <React.Fragment>
+        <main className="pagecontainer">
 
-            <main className="pagecontainer">
+            {loading == true && <Loader />}
 
-                {loading == true && <Loader />}
+            <section className='page'>
 
-                <section className='page'>
+                <div className="page__title">
+                    <h1>{fields.title}</h1>
+                </div>
 
-                    <div className="page__title">
-                        <h1>{fields.title}</h1>
-                    </div>
+                <Link to={'/'}>Back to Home page</Link>
 
-                    <Link to={'/'}>Back to Home page</Link>
+                <div className='page__content'>
+                    {documentToReactComponents(fields.mainContent)}
+                </div>
 
-                    <div className='page__content'>
-                        {documentToReactComponents(fields.mainContent)}
-                    </div>
+            </section>
 
-                </section>
-
-            </main>
-            
-        </React.Fragment>
+        </main>
 
     )
 }

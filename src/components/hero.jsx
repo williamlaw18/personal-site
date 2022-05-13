@@ -28,7 +28,7 @@ const Hero = (content) => {
                     <h2 className='hero__content--subtitle'>Developer & CS Student</h2>
                     <p className="hero__content--tagline">I'm a solutions based, front-end web developer, specializing in React. Based in the Lake District UK.</p>
 
-                    <Link className='button' to={'./'}>Get in Touch!</Link>
+                    <Link className='button' to={'./bubbles'}>Get in Touch!</Link>
                 </div>
 
                 <hr className="hero__image">
