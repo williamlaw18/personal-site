@@ -2,11 +2,12 @@
 @use '/src/styles/variables/vars';
 
 .cards{
+    padding: 40px 0px;
+    position: relative;
     &__wrapper{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px; 
-        padding: 40px 0px;
         @media(min-width: vars.$tablet_lower){
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 30px;
@@ -14,6 +15,25 @@
         
         @media(min-width: vars.$laptop_lower){
             grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0%;
+        top: 0;
+        z-index: -1;
+        width: 0%;
+        height: 100%;
+        background-color: vars.$color_secondary;
+        transition: width .5s;
+    }
+
+    &.scrolled{
+        &::after{
+            width: 100%;
         }
     }
 }

@@ -14,7 +14,6 @@ const Page = (content) => {
     
     const [loading, setLoading] = useState(true)
     const [loadtimeout, setLoadtimeout] = useState(false);
-
     if (loading == false){
         const timeout = setTimeout(() => {
         console.log('t')

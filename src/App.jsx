@@ -22,7 +22,6 @@ const App = () => {
 
   const [loading, setLoading] = useState(true)
   const [loadtimeout, setLoadtimeout] = useState(false);
-
   if (loading == false){
     const timeout = setTimeout(() => {
       console.log('t')
