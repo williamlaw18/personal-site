@@ -15,8 +15,6 @@ const Hero = (content) => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    console.log(scroll)
-
     return(
         <section className="hero">
 

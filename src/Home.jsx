@@ -14,6 +14,14 @@ const Home = () => {
     const { getEntries } = useContentful()
 
     const [loading, setLoading] = useState(true)
+    const [loadtimeout, setLoadtimeout] = useState(false);
+
+    if (loading == false){
+      const timeout = setTimeout(() => {
+        console.log('t')
+        setLoadtimeout(true);
+      }, 300)
+    }
 
     useEffect(async () => {
       setLoading(true)
@@ -26,7 +34,7 @@ const Home = () => {
 
       <main>
 
-        {loading == true && <Loader />}
+        {loadtimeout == false && <Loader loading={loading}/>}
 
         <Hero />
 

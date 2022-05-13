@@ -29,8 +29,8 @@
         width: 0; 
         height: 0; 
         display: block;
-        border-top: vars.$header_height / 2 solid transparent;
-        border-bottom: vars.$header_height / 2 solid transparent;
+        border-top: calc(vars.$header_height / 2) solid transparent;
+        border-bottom: calc(vars.$header_height / 2) solid transparent;
         border-left: 40px solid vars.$color_primary;
         position: absolute;
         left: 100px;

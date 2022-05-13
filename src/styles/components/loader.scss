@@ -9,6 +9,8 @@
     z-index: 999;
     display: flex;
     justify-content: center;
+    transition: all .3s;
+    opacity: 1;
 
     &__spinner {
         display: inline-block;

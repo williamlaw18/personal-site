@@ -11,7 +11,16 @@ import './styles/components/page.scss';
 const Page = (content) => {
 
     const [fields, setFields] = useState([])
+    
     const [loading, setLoading] = useState(true)
+    const [loadtimeout, setLoadtimeout] = useState(false);
+
+    if (loading == false){
+        const timeout = setTimeout(() => {
+        console.log('t')
+        setLoadtimeout(true);
+        }, 300)
+    }
 
     useEffect(() => {
         setLoading(true)
@@ -23,7 +32,7 @@ const Page = (content) => {
 
         <main className="pagecontainer">
 
-            {loading == true && <Loader />}
+            {loadtimeout == false && <Loader loading={loading}/>}
 
             <section className='page'>
 
