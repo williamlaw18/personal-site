@@ -31,9 +31,9 @@ const Canvas = ({type, mouse, loading, container}) => {
         objects.current = objects.current.filter((item) => item.radius > 10);
             
         objects.current.forEach((object) => {
-            object.radius = (Math.max(0, object.radius - (0.5)));
-            object.x = ((object.x).toFixed(1) - 1.5);
-            object.y = ((object.y).toFixed(1) - 2);
+            object.radius = (Math.max(0, object.radius - (0.25)));
+            object.x = ((object.x).toFixed(1) - 0.5);
+            object.y = ((object.y).toFixed(1) - 1);
             ctx.beginPath()
             if (object.type == 'circle'){
                 ctx.arc(object.x, object.y, object.radius, 0, 2 * Math.PI, false)
