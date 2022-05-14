@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import { isSafari } from 'react-device-detect';
 
 import './styles/base/base.scss';
@@ -15,6 +15,8 @@ import Canvas from './components/canvas';
 const Home = () => {
 
     const cards = useRef();
+    
+    const canvasWrapper = useRef();
 
     const [projects, setProjects] = useState([])
     const [experiences, setExperiences] = useState([])
@@ -23,12 +25,12 @@ const Home = () => {
     const { paralxSection } = useHelper();
     const [loading, setLoading] = useState(true);
 
+
     useEffect(async () => {
       setLoading(true);
       setProjects(await getEntries('project'))
       setExperiences(await getEntries('experience'))
       setLoading(false);
-
       paralxSection(cards, 0.15, 0, true);
     }, [])
 
@@ -40,7 +42,7 @@ const Home = () => {
 
         <Hero />
 
-        <section className='cards'>
+        <section className='cards' ref={canvasWrapper}>
 
           <div className='cards__wrapper pagecontainer'>
             {projects.map((item, index) => (
@@ -48,13 +50,13 @@ const Home = () => {
             ))}
 
             {experiences.map((experience, index) => (
-              <Card key={index} card={experience}  width={"wide"}/>
+              <Card key={index} card={experience} width={"wide"}/>
             ))}
 
           </div>
 
           <div className='cards__background' ref={cards}>
-            <Canvas type={'hex'}/>
+            <Canvas type={'hex'} container={canvasWrapper} loading={loading}/>
           </div>
 
         </section>

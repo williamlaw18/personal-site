@@ -1,0 +1,11 @@
+
+@use '/src/styles/variables/vars';
+
+.badPage{
+    height: 100vh;
+    canvas{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}

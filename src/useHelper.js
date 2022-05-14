@@ -11,22 +11,26 @@ const useHelper = () => {
     }
 
     const paralxSection = (ref, movemultiple, offset = 0, height = false) => {
-        const refHeight = ref.current.offsetHeight;
         
-        const setScrollValues = () => {
-            
-            const refScroll = ref.current.getBoundingClientRect().top - window.innerHeight
-            const scrollVal = (window.pageYOffset * movemultiple) + offset;
-            if ( refScroll < 0 ){
-                ref.current.style.transform = `translateY(${-scrollVal}px)`;
-                if (height == true){
-                    ref.current.style.height = `${refHeight + scrollVal}px`;
-                }
-            };
+        const setScrollValues = (nodeHeight) => {
+                
+            if (ref.current != null){
+                const refScroll = ref.current.getBoundingClientRect().top - window.innerHeight
+                const scrollVal = (window.pageYOffset * movemultiple) + offset;
+                if ( refScroll < 0 ){
+                    ref.current.style.transform = `translateY(${-scrollVal}px)`;
+                    if (height == true){
+                        ref.current.style.height = `${nodeHeight + scrollVal}px`;
+                    }
+                };
+            }
         }
-        setScrollValues()
 
-        window.addEventListener('scroll', () => setScrollValues())
+        if (ref != null){
+            const refHeight = ref.current.offsetHeight;
+            setScrollValues(refHeight)
+            window.addEventListener('scroll', () => setScrollValues(refHeight))
+        }
     }
 
     return { scrollSection, paralxSection }
