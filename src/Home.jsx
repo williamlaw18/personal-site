@@ -31,7 +31,7 @@ const Home = () => {
       setProjects(await getEntries('project'))
       setExperiences(await getEntries('experience'))
       setLoading(false);
-      paralxSection(cards, 0.15, 0, true);
+      // paralxSection(cards, 0.15, 0, true);
     }, [])
 
     return (
