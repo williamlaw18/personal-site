@@ -43,7 +43,7 @@ const App = () => {
       <Routes >
           <Route path="/" element={<Home/>} />
 
-          <Route path="/bubbles" element={<Canvas type={'hex'}/>}/>
+          <Route path="/bubbles" element={<Canvas type={'circle'} mouse={true}/>}/>
 
           {projects.map((page , index) =>
             <Route path={page.url} element={<Page content={page} />} key={index}/>

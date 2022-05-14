@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const Canvas = (type, mouse) => {
+const Canvas = ({type, mouse}) => {
     const canvasRef = useRef()
     const objects = useRef([])
 
     const createObject = (x, y) => {
         const object = {
-            type: type.type,
+            type: type,
             x: x,
             y: y,
             radius: 10 + (Math.random() * (100 - 10)) 

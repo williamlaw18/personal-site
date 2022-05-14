@@ -20,7 +20,6 @@ const useHelper = () => {
             if ( refScroll < 0 ){
                 ref.current.style.transform = `translateY(${-scrollVal}px)`;
                 if (height == true){
-                    console.log('tes')
                     ref.current.style.height = `${refHeight + scrollVal}px`;
                 }
             };

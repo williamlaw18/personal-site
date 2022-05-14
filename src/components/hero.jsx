@@ -18,7 +18,6 @@ const Hero = (content) => {
 
     useEffect(() => {
         windowWidth()
-        console.log(container.current.offsetHeight / 2)
         paralxSection(arrow, 0.5, (-container.current.offsetHeight / 2) + 50);
         window.addEventListener('resize', windowWidth);
         return () => window.removeEventListener('resize', windowWidth);
