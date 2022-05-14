@@ -10,16 +10,24 @@ const useHelper = () => {
         });
     }
 
-    const paralxSection = (ref, movemultiple, offset = 0) => {
+    const paralxSection = (ref, movemultiple, offset = 0, height = false) => {
         const refHeight = ref.current.offsetHeight;
-        window.addEventListener('scroll', () => {
+        
+        const setScrollValues = () => {
+            
             const refScroll = ref.current.getBoundingClientRect().top - window.innerHeight
             const scrollVal = (window.pageYOffset * movemultiple) + offset;
             if ( refScroll < 0 ){
                 ref.current.style.transform = `translateY(${-scrollVal}px)`;
-                ref.current.style.height = `${refHeight + scrollVal}px`;
+                if (height == true){
+                    console.log('tes')
+                    ref.current.style.height = `${refHeight + scrollVal}px`;
+                }
             };
-        });
+        }
+        setScrollValues()
+
+        window.addEventListener('scroll', () => setScrollValues())
     }
 
     return { scrollSection, paralxSection }

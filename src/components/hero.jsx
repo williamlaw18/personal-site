@@ -1,26 +1,31 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../styles/components/hero.scss';
 
+import useHelper from '../useHelper';
+
 const Hero = (content) => {
 
-    const [scroll, setScroll] = useState(0);
     const [isMobile, setIsMobile] = useState();
+
+    const container = useRef();
+    const arrow = useRef();
+    const { paralxSection } = useHelper();
     
-    const onScroll = () => setScroll(window.pageYOffset);
     const windowWidth = () => (window.innerWidth < 700 ? setIsMobile(true): setIsMobile(false));
 
     useEffect(() => {
         windowWidth()
-        window.addEventListener('scroll', onScroll);
+        console.log(container.current.offsetHeight / 2)
+        paralxSection(arrow, 0.5, (-container.current.offsetHeight / 2) + 50);
         window.addEventListener('resize', windowWidth);
-        return () => window.removeEventListener('scroll', onScroll);
+        return () => window.removeEventListener('resize', windowWidth);
     }, []);
 
     return(
-        <section className="hero">
+        <section className="hero" ref={container}>
 
             <div className="hero__wrapper pagecontainer">
                 
@@ -41,7 +46,7 @@ const Hero = (content) => {
                 </hr>}
             </div>
 
-            <hr className="hero__arrow" style={{transform: `translateY(${70 -scroll / 10}%)`}}>
+            <hr className="hero__arrow" ref={arrow}>
             </hr>
             
 

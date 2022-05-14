@@ -4,6 +4,7 @@
 .hero{
     height: calc(100vh - vars.$header_height);
     max-height: 1500px;
+    position: relative;
     &__wrapper{
         display: flex;
     }

@@ -14,7 +14,6 @@ import Page from './Page';
 import Loader from './components/loader';
 
 import Canvas from './components/canvas';
-import HexEffect from './components/hexEffect';
 
 const App = () => {
 
@@ -44,9 +43,7 @@ const App = () => {
       <Routes >
           <Route path="/" element={<Home/>} />
 
-          <Route path="/bubbles" element={<Canvas />}/>
-
-          <Route path="/test" element={<HexEffect />}/>
+          <Route path="/bubbles" element={<Canvas type={'hex'}/>}/>
 
           {projects.map((page , index) =>
             <Route path={page.url} element={<Page content={page} />} key={index}/>

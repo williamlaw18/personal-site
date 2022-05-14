@@ -10,7 +10,7 @@ import Hero from './components/hero';
 import useContentful from './useContentful';
 import Loader from './components/loader';
 
-import HexEffect from './components/hexEffect';
+import Canvas from './components/canvas';
 
 const Home = () => {
 
@@ -29,7 +29,7 @@ const Home = () => {
       setExperiences(await getEntries('experience'))
       setLoading(false);
 
-      paralxSection(cards, 0.2);
+      paralxSection(cards, 0.15, 0, true);
     }, [])
 
     return (
@@ -54,7 +54,7 @@ const Home = () => {
           </div>
 
           <div className='cards__background' ref={cards}>
-            {isSafari != true && <HexEffect/>}
+            <Canvas type={'hex'}/>
           </div>
 
         </section>

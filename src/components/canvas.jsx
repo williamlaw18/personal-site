@@ -1,59 +1,82 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const Canvas = () => {
+const Canvas = (type, mouse) => {
     const canvasRef = useRef()
-    const bubbles = useRef([])
+    const objects = useRef([])
 
-    const createBubble = (x, y) => {
-        const bubble = {
+    const createObject = (x, y) => {
+        const object = {
+            type: type.type,
             x: x,
             y: y,
             radius: 10 + (Math.random() * (100 - 10)) 
         };
-        bubbles.current = [...bubbles.current, bubble]
+        objects.current = [...objects.current, object]
     }
 
-    const drawBubbles = () => {
+    const drawObjects = () => {
         const ctx = canvasRef.current?.getContext('2d')
-        if (ctx != null) {
-            ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-            bubbles.current.forEach((bubble) => {
-                bubble.radius = Math.max(0, bubble.radius - (0.01 * bubble.radius));
-                bubble.x = bubble.x - 0.3;
-                bubble.y = bubble.y - 0.5;
-                ctx.beginPath()
-                ctx.arc(bubble.x, bubble.y, bubble.radius, 0, 2 * Math.PI, false)
+        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
+        objects.current = objects.current.filter((item) => item.radius > 10);
+            
+        objects.current.forEach((object) => {
+            object.radius = Math.max(0, object.radius - (0.01 * object.radius));
+            object.x = object.x - 0.3;
+            object.y = object.y - 0.5;
+            ctx.beginPath()
+            if (object.type == 'circle'){
+                ctx.arc(object.x, object.y, object.radius, 0, 2 * Math.PI, false)
                 ctx.fillStyle = "#B4E4FF"
                 ctx.fill()
-            });
-        }
+            } else if (object.type == 'hex'){
+                let a = 2 * Math.PI / 6;
+                for (let i = 0; i < 6; i++) {
+                    ctx.lineTo(object.x + object.radius * Math.cos(a * i), object.y + object.radius * Math.sin(a * i));
+                }
+                ctx.closePath();
+                ctx.stroke();
+            }
+            
+        });
     };
+
+    const randomObject = () => {
+        let randomX = 10 + Math.floor(Math.random() * (canvasRef.current.width - 10));
+        let randomY = 10 + Math.floor(Math.random() * (canvasRef.current.height - 10));
+        createObject(randomX, randomY);
+        drawObjects();
+    }
 
     const canvasDraw = (e) => {
         const canDraw = (e.nativeEvent.offsetX * e.nativeEvent.offsetY) % 10 == 0
-        if (canDraw) createBubble(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
-        drawBubbles();
+        if (canDraw && mouse == true) createObject(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+        if (mouse == true) drawObjects();
     };
 
     useEffect(() => {
+
+        const addObject = setInterval(() => {
+            randomObject();
+        }, 500)
+
         const interval = setInterval(() => {
-            drawBubbles();
-        }, 10)
-        return () => clearInterval(interval);
+            drawObjects();
+        }, 20)
+        
+        return () => {
+            clearInterval(addObject)
+            clearInterval(interval);
+        };
     }, []);
 
     return (
-        <main className="pagecontainer">
-            <section className="page">
-                <h1>Bubbles!</h1>
-                <canvas
-                    onMouseMove={canvasDraw}
-                    ref={canvasRef}
-                    width={`1280px`}
-                    height={`720px`}
-                />
-            </section>
-        </main>
+        <canvas
+            onMouseMove={canvasDraw}
+            ref={canvasRef}
+            width={`1280px`}
+            height={`900px`}
+        />
     );
 }
 
