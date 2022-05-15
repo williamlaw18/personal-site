@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const Canvas = (
+const Particles = (
     {loading, container, type, mouse, rate = 500, colors = [], border = true, minRadius = 10, maxRadius = 100, xMove = 1.5, yMove = 1,}) => {
     
     const canvasRef = useRef()
@@ -12,13 +12,10 @@ const Canvas = (
     const [canvasHeight, setCanvasHeight] = useState(0);
     const [canvasWidth, setCanvasWidth] = useState(0);
 
-    const initCanvas = () => {
-        setCanvasArea();
-        resetInterval()
-    }
-
+    //Sets canvas area to container size
     const setCanvasArea = () => {
         if (container.current != null){
+            console.log(container.current);
             setCanvasHeight(container.current.offsetHeight)
             setCanvasWidth(container.current.offsetWidth);
         }
@@ -73,6 +70,12 @@ const Canvas = (
         }
     };
 
+    //Draw animation frames
+    const animate = () => {
+        drawObjects();
+        animateRef.current = requestAnimationFrame(animate);
+    }
+
     //Creates particle randomly
     const randomObject = () => {
         if (canvasRef.current != null){
@@ -90,31 +93,26 @@ const Canvas = (
         if (mouse == true) drawObjects();
     };
 
-    //Anim frames
-    const animate = () => {
-        drawObjects();
-        animateRef.current = requestAnimationFrame(animate);
-    }
-
+    //Rate of random object
     const resetInterval = () => {
         if (interval.current != null) clearInterval(interval.current);
         interval.current = setInterval(() => {
             randomObject();
         }, rate)
     }
-    
+
     //Component update
     useEffect(() => {     
         if (loading == false || loading == null){
-            initCanvas()
+            setCanvasArea();
+            resetInterval()
+            window.addEventListener('resize', setCanvasArea);
             animateRef.current = requestAnimationFrame(animate);
-            return () => cancelAnimationFrame(animateRef.current);
         }
-        window.addEventListener('resize', setCanvasArea);
-
         return () => {
             clearInterval(interval.current);
             window.removeEventListener('resize', setCanvasArea);
+            cancelAnimationFrame(animateRef.current);
         };
     }, [loading, type]);
 
@@ -130,4 +128,4 @@ const Canvas = (
     );
 }
 
-export default Canvas
+export default Particles

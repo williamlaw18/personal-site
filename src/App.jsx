@@ -13,8 +13,6 @@ import BadPage from './404';
 import Page from './Page';
 import Loader from './components/loader';
 
-import Canvas from './components/canvas';
-
 const App = () => {
 
   const [projects, setProjects] = useState([])

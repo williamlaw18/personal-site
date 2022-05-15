@@ -10,12 +10,11 @@ import Hero from './components/hero';
 import useContentful from './useContentful';
 import Loader from './components/loader';
 
-import Canvas from './components/canvas';
+import Particles from './components/Particles';
 
 const Home = () => {
 
-    const cards = useRef();
-    
+    const cardsBackground = useRef();
     const canvasWrapper = useRef();
 
     const [projects, setProjects] = useState([])
@@ -56,7 +55,7 @@ const Home = () => {
           </div>
 
           <div className='cards__background' ref={cards}>
-            <Canvas type={'hex'} container={canvasWrapper} loading={loading}/>
+            <Particles type={'hex'} container={canvasWrapper} loading={loading}/>
           </div>
 
         </section>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './styles/base/base.scss';
 
-import Canvas from './components/canvas';
+import Particles from './components/Particles';
 
 import './styles/components/badPage.scss';
 
@@ -22,7 +22,7 @@ const BadPage = () => {
       <React.Fragment>
         <main className='badPage' ref={container}>
 
-          <Canvas 
+          <Particles 
             type={canvasType}
             mouse={true}
             container={container}
