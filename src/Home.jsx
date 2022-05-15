@@ -10,7 +10,7 @@ import Hero from './components/hero';
 import useContentful from './useContentful';
 import Loader from './components/loader';
 
-import Particles from './components/Particles';
+import Particles from './components/particles';
 
 const Home = () => {
 
@@ -30,7 +30,7 @@ const Home = () => {
       setProjects(await getEntries('project'))
       setExperiences(await getEntries('experience'))
       setLoading(false);
-      // paralxSection(cards, 0.15, 0, true);
+      // paralxSection(cardsBackground, 0.15, 0, true);
     }, [])
 
     return (
@@ -54,7 +54,7 @@ const Home = () => {
 
           </div>
 
-          <div className='cards__background' ref={cards}>
+          <div className='cards__background' ref={cardsBackground}>
             <Particles type={'hex'} container={canvasWrapper} loading={loading}/>
           </div>
 
