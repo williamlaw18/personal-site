@@ -1,5 +1,5 @@
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 
 const ParticleController = ({setParticles}) => {
 
@@ -14,14 +14,20 @@ const ParticleController = ({setParticles}) => {
         yMove: 0
     })
 
-    const updateXY = (axis, value) => {
+    const updateRate = (value) => {
+        const multiple = 10;
+        const output = ((parseInt(value)) * multiple);
+        setSettings(Object.assign({}, settings, {['rate']: output}))
+    }
 
+    const updateXY = (axis, value) => {
         const baseNum = 50
         const multiple = 5;
+        const output = -((parseInt(value) - baseNum) / multiple);
         let keyName;
 
         axis == 'x' ? keyName = 'xMove': keyName = 'yMove'
-        setSettings(Object.assign({}, settings, {[keyName]: -(parseInt(value) - baseNum) / multiple}))
+        setSettings(Object.assign({}, settings, {[keyName]: output}))
     }
 
     useEffect(() => {
@@ -32,6 +38,7 @@ const ParticleController = ({setParticles}) => {
         <section className='particleController'>
             <input id="xMove" type="range" onChange={(input) => updateXY('x', input.target.value)} />
             <input id="yMove" type="range" onChange={(input) => updateXY('y', input.target.value)} />
+            <input id="rate" type="range" onChange={(input) => updateRate(input.target.value)} />
         </section>
     )
 

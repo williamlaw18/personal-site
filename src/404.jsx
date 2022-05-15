@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './styles/base/base.scss';
 
-import Particles from './components/Particles';
+import Particles from './components/particles';
 
 import './styles/components/badPage.scss';
 import ParticleController from './components/particleController';
