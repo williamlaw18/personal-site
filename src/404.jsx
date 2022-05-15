@@ -3,19 +3,16 @@ import { Link } from 'react-router-dom';
 
 import './styles/base/base.scss';
 
-import Particles from './components/particles';
+import Particles from './components/Particles';
 
 import './styles/components/badPage.scss';
+import ParticleController from './components/particleController';
 
 const BadPage = () => {
 
   const container = useRef(null)
 
-  const [canvasType, setCanvasType] = useState('hex');
-
-  useEffect(() => {
-    console.log(canvasType)
-  }, [canvasType])
+  const [particleSettings, setParticleSettings] = useState({});
 
   return(
 
@@ -23,9 +20,9 @@ const BadPage = () => {
         <main className='badPage' ref={container}>
 
           <Particles 
-            type={canvasType}
             mouse={true}
             container={container}
+            particles={particleSettings}
             />
 
             <section className='pagecontainer'>
@@ -34,7 +31,7 @@ const BadPage = () => {
                 <h2>Missing page</h2>
                 <Link className='button' to={'/'}>Take me back!</Link>
                 
-                <button className='button' onClick={() => setCanvasType('circle')}> Change!</button>
+                <ParticleController setParticles={setParticleSettings}/>
               </div>
             </section>
         </main>
