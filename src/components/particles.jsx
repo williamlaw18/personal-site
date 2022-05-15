@@ -3,7 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 const Particles = (
     {loading, container, mouse, particles = {
         type: 'circle',
-        rate: 500,
+        rate: 150,
+        fadeSpeed: 0.25,
         colors: [],
         border: true,
         minRadius: 10,
@@ -59,7 +60,7 @@ const Particles = (
             objects.current = objects.current.filter((item) => item.radius > 5);
             
             objects.current.forEach((object) => {
-                object.radius = (Math.max(0, object.radius - (0.25)));
+                object.radius = (Math.max(0, object.radius - (particles.fadeSpeed)));
                 object.x = ((object.x).toFixed(1) - particles.xMove);
                 object.y = ((object.y).toFixed(1) - particles.yMove);
                 ctx.beginPath()

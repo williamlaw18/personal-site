@@ -1,0 +1,38 @@
+
+.particleController{
+    position: absolute;
+    z-index: 9999;
+    background-color: white;
+    box-shadow: 3px 3px 10px -8px black;
+    border-radius: 5px;
+    padding: 20px;
+
+    &__input{
+        display: flex;
+
+        &:not(:last-child){
+            margin-bottom: 5px;
+        }
+        
+        input{
+            margin-right: 20px;
+        }
+    }
+
+    &__buttons{
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        input{
+            margin-right: 10px;
+        }
+    }
+
+    &__radio{
+        display: flex;
+        > div:not(:last-child){
+            margin-right: 20px;
+        }
+    }    
+}
