@@ -43,7 +43,7 @@ const Canvas = (
             const ctx = canvasRef.current?.getContext('2d')
             ctx.clearRect(0, 0, canvasRef.current.offsetWidth, canvasRef.current.offsetHeight);
             
-            objects.current = objects.current.filter((item) => item.radius > minRadius);
+            objects.current = objects.current.filter((item) => item.radius > minRadius - (minRadius / 2));
             
             objects.current.forEach((object) => {
                 object.radius = (Math.max(0, object.radius - (0.25)));
