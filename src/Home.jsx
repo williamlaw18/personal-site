@@ -55,7 +55,7 @@ const Home = () => {
           </div>
 
           <div className='cards__background' ref={cardsBackground}>
-            <Particles type={'hex'} container={canvasWrapper} loading={loading}/>
+            <Particles container={canvasWrapper} loading={loading}/>
           </div>
 
         </section>

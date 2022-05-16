@@ -1,11 +1,11 @@
 
 .particleController{
-    position: absolute;
     z-index: 9999;
     background-color: white;
     box-shadow: 3px 3px 10px -8px black;
     border-radius: 5px;
     padding: 20px;
+    display: inline-block;
 
     &__input{
         display: flex;
@@ -35,4 +35,35 @@
             margin-right: 20px;
         }
     }    
+
+    &__color{
+        display: block;
+        &--button{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            button{
+                margin-left: 10px;
+            }
+        }
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            flex-wrap: wrap;
+            grid-gap: 5px;
+        }
+        &--item{
+            display: inline-flex;
+            align-items: center;
+            margin-right: 20px;
+            label{
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                border: 1px solid black;
+                border-radius: 100%;
+                color: transparent;
+            }
+        }
+    }
 }

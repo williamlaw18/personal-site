@@ -30,8 +30,9 @@ const BadPage = () => {
                 <h1>Oops! 404</h1>
                 <h2>Missing page</h2>
                 <Link className='button' to={'/'}>Take me back!</Link>
-                
-                <ParticleController setParticles={setParticleSettings}/>
+                <div>
+                  <ParticleController setParticles={setParticleSettings}/>
+                </div>
               </div>
             </section>
         </main>
