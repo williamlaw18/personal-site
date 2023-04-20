@@ -13,7 +13,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>Home</h1>
+        <h1>Will Law</h1>
+        <h2>Front-End Web Dev & CS Student</h2>
         <Link href="/projects">Projects</Link>
       </main>
 
