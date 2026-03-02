@@ -1,24 +1,36 @@
-# Personal site (WIP) #
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Project was started with create-react-app. and Hosted on netlify
-- use npm install to install project dependencies
-- use npm start to develop locally.
-- netlify is configured to deploy automatically from the the build folder in the deploy branch.
+## Getting Started
 
-## Why Netlify? ##
+First, run the development server:
 
-I've only recently come across netlify and I'm honestly blown away.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- They offer totally free static site hosting. 
-- Git integrated deploy enviroment. 
-- Teams and site project managements systems.
-- A Really modern, clean interface.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-As the modern web starts to lean toward Node based stacks, a server side language is no longer required to have complex and content heavy sites when using a library like react and a simple cms like netlify or ghost.
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-## Site Address ##
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Current site link: 
-https://happy-roentgen-e5986e.netlify.com/
+## Learn More
 
-Need to point old https://williamlawdev.com/ domain to new server
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
