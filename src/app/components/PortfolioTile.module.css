@@ -1,7 +1,6 @@
 .tile {
     flex: 1 1 calc(50% - 1.5rem);
     border-radius: 10px;
-    padding: 1rem;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -10,7 +9,21 @@
     border: 1px solid var(--tile-border);
     backdrop-filter: blur(6px);
     box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+    color: var(--text-secondary);
+    overflow: hidden;
+  }
+
+  .tile > *:not(.details), .details > *:not(.screenshotContainer) {
+    padding: 1rem;
+  }
+
+  .tile .tileDescription + p{
+    padding-top: 0px;
+  }
+
+  .screenshotContainer{
+    margin-top: 1rem;
   }
   
   .tile:hover {
@@ -18,10 +31,15 @@
     box-shadow: 0 12px 24px rgba(0,0,0,0.2);
     background: var(--tile-bg-hover);
   }
+
+  .details p{
+    white-space: pre-line;
+  }
+  
   
   .expanded {
+    margin-top: 20px;
     flex: 1 1 100%;
-    transform: scale(1.02);
   }
   
   .tileTitle {
@@ -42,6 +60,7 @@
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
+    color: var(--text-secondary);
     gap: 1rem;
     animation: fadeIn 0.3s ease forwards;
   }
@@ -50,24 +69,9 @@
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  
-  .screenshotContainer {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .screenshot {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .screenshot:hover { transform: scale(1.05); }
-  
+
+
+    
   .infoSections {
     font-size: 0.95rem;
     line-height: 1.4;

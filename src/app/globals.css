@@ -10,6 +10,7 @@
   --text-tertiary: #aaaaaa;
 
   --tile-bg: rgba(255, 255, 255, 0.05);
+  --tile-bg-dark: rgba(40, 49, 58, 0.5);
   --tile-bg-hover: rgba(255, 255, 255, 0.15);
   --tile-border: rgba(255, 255, 255, 0.2);
 
