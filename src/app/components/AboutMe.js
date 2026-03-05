@@ -8,10 +8,16 @@ export default function AboutMe() {
     <>
       <h2 className={styles.sectionTitle}>About Me</h2>
       <p className={styles.paragraph}>
-        Motivated and adaptable professional with experience in web development and client/server systems. Skilled in JavaScript, React, Next.js, and backend integration. Experienced in Agile development, Git workflows, and creating clean, modularized code.
+        Hi! I'm Will. I'm an experienced web developer in both self-employed, and industry work. I've conducted the design and architecture of major projects and have worked within fast-paced team enviroments for several years
       </p>
       <p className={styles.paragraph}>
-        I have delivered projects independently and as part of teams, using modern design and development practices, and I am keen to explore new techniques such as agentic AI systems.
+        I've been writing code for almost a decade. Starting out by stringing together scripts in video games, before working full time as a Junior web developer for Pixel junction, then Verse Ltd.
+      </p>
+      <p className={styles.paragraph}>
+      I returned to University where I completed a Computer Science & Artificial Intelligence Degree. And since then, I've worked as a self employed professional whilst travelling Australia in my van! 
+      </p>
+      <p className={styles.paragraph}>
+        My home is and always will be the Lake District in the UK. Where I love to hike, climb and enjoy the peace and quiet of nature.
       </p>
     </>
   );

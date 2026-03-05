@@ -110,7 +110,10 @@ export default function Page() {
         style={{ animationDelay: '0.7s' }}
       >
         <h2>Contact</h2>
-        <p>Any content here will also fade in and slide up on page load.</p>
+        <ul className={styles.contact}>
+          <li>Phone Number <p>07444167357</p></li>
+          <li>Email <p>21will01law00@gmail.com</p></li>
+        </ul>
       </section>
     </main>
     </>
