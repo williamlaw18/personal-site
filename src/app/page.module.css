@@ -65,8 +65,19 @@
 
 .portfolioGrid {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 1.5rem;
+}
+
+@media (min-width: 800px){
+  .portfolioGrid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  
 }
 
 /* =========================
