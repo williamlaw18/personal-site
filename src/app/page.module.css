@@ -44,8 +44,9 @@
   list-style-type: none;
 }
 
-.contact li p{
+.contact li a{
   margin: 10px;
+  display: block;
   color: var(--text-secondary);
 }
 

@@ -111,8 +111,9 @@ export default function Page() {
       >
         <h2>Contact</h2>
         <ul className={styles.contact}>
-          <li>Phone Number <p>07444167357</p></li>
-          <li>Email <p>21will01law00@gmail.com</p></li>
+          <li>Phone Number <a href='tel:+447444167357'>07444167357</a></li>
+          <li>Email <a href='mailto:21will01law00@gmail.com'>21will01law00@gmail.com</a></li>
+          <li>LinkedIn <a href='https://www.linkedin.com/in/will-law-a7861a256/'>William Law</a></li>
         </ul>
       </section>
     </main>

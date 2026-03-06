@@ -17,7 +17,7 @@ export default function AboutMe() {
       I returned to University where I completed a Computer Science & Artificial Intelligence Degree. And since then, I've worked as a self employed professional whilst travelling Australia in my van! 
       </p>
       <p className={styles.paragraph}>
-        My home is and always will be the Lake District in the UK. Where I love to hike, climb and enjoy the peace and quiet of nature.
+        My home is and always will be the Lake District in the UK. Where I love to hike, climb and enjoy the peace and quiet.
       </p>
     </>
   );
