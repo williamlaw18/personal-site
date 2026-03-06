@@ -1,0 +1,19 @@
+.section {
+    margin-bottom: 3rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+  
+  .paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+  
+  .paragraph:last-child {
+    margin-bottom: 0;
+  }
