@@ -13,9 +13,9 @@ const portfolioItemsData = [
     description: 'A subscription-based music learning platform, containing cloud hosted multi-angled tutorials within structured course content.',
     desc_extra: 'This project was a lot of fun! It was entirely, planned, designed, developed, and tested by myself on behalf of the Fitzpatrick Academy of Music team.',
     screenshots: [
-      '/site_imgs/ff_1.png',
-      '/site_imgs/ff_2.png',
-      '/site_imgs/ff_3.png',
+      '/site_imgs/FF_1.png',
+      '/site_imgs/FF_2.png',
+      '/site_imgs/FF_3.png',
     ],
     tech: 'React js, Next.js, Node.js, StrapiCMS, Stripe Payments, AWS Backend, Vercel Headless',
     highlights: 'Video Streaming, Video Encoding, Payment Subscription, Cloud Hosting',
@@ -60,63 +60,63 @@ export default function Page() {
 
   return (
     <>
-    <BackgroundAnimation />
-    
-    <main className={styles.main}>
-      <header
-        className={`${styles.header} ${styles.fadeSlideUp}`}
-        style={{ animationDelay: '0s' }}
-      >
-        <h1>William Law 👋</h1>
-        <p>Web developer | React & Next.js | Industry Experienced</p>
-      </header>
+      <BackgroundAnimation />
 
-      <section
-        className={`${styles.section} ${styles.fadeSlideUp}`}
-        style={{ animationDelay: '0.1s' }}
-      >
-        <h2>Portfolio</h2>
-        <div className={styles.portfolioGrid}>
-          {sortedItems.map((item, index) => (
-            <PortfolioTile
-              key={item.id}
-              title={item.title}
-              description={item.description}
-              screenshots={item.screenshots}
-              link={item.link}
-              expanded={item.id === expandedId}
-              tech={item.tech}
-              highlights={item.highlights}
-              role={item.role}
-              icon={item.icon}
-              detail={item.detail}
-              desc_extra={item.desc_extra}
-              onClick={() => setExpandedId(item.id === expandedId ? null : item.id)}
-              animationDelay={`${0.15 * index + 0.2}s`} // stagger tiles
-            />
-          ))}
-        </div>
-      </section>
+      <main className={styles.main}>
+        <header
+          className={`${styles.header} ${styles.fadeSlideUp}`}
+          style={{ animationDelay: '0s' }}
+        >
+          <h1>William Law 👋</h1>
+          <p>Web developer | React & Next.js | Industry Experienced</p>
+        </header>
 
-      <section
-        className={`${styles.section} ${styles.fadeSlideUp}`}
-        style={{ animationDelay: '0.5s' }}
-      >
-        <AboutMe />
-      </section>
+        <section
+          className={`${styles.section} ${styles.fadeSlideUp}`}
+          style={{ animationDelay: '0.1s' }}
+        >
+          <h2>Portfolio</h2>
+          <div className={styles.portfolioGrid}>
+            {sortedItems.map((item, index) => (
+              <PortfolioTile
+                key={item.id}
+                title={item.title}
+                description={item.description}
+                screenshots={item.screenshots}
+                link={item.link}
+                expanded={item.id === expandedId}
+                tech={item.tech}
+                highlights={item.highlights}
+                role={item.role}
+                icon={item.icon}
+                detail={item.detail}
+                desc_extra={item.desc_extra}
+                onClick={() => setExpandedId(item.id === expandedId ? null : item.id)}
+                animationDelay={`${0.15 * index + 0.2}s`} // stagger tiles
+              />
+            ))}
+          </div>
+        </section>
 
-      <section
-        className={`${styles.section} ${styles.fadeSlideUp}`}
-        style={{ animationDelay: '0.7s' }}
-      >
-        <h2>Contact</h2>
-        <ul className={styles.contact}>
-          <li>Phone Number <a href='tel:+447444167357'>07444167357</a></li>
-          <li>Email <a href='mailto:21will01law00@gmail.com'>21will01law00@gmail.com</a></li>
-          <li>LinkedIn <a href='https://www.linkedin.com/in/will-law-a7861a256/'>William Law</a></li>
-        </ul>
-      </section>
-    </main>
+        <section
+          className={`${styles.section} ${styles.fadeSlideUp}`}
+          style={{ animationDelay: '0.5s' }}
+        >
+          <AboutMe />
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.fadeSlideUp}`}
+          style={{ animationDelay: '0.7s' }}
+        >
+          <h2>Contact</h2>
+          <ul className={styles.contact}>
+            <li>Phone Number <a href='tel:+447444167357'>07444167357</a></li>
+            <li>Email <a href='mailto:21will01law00@gmail.com'>21will01law00@gmail.com</a></li>
+            <li>LinkedIn <a href='https://www.linkedin.com/in/will-law-a7861a256/'>William Law</a></li>
+          </ul>
+        </section>
+      </main>
     </>
   );
 }
