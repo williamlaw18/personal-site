@@ -153,11 +153,35 @@ def action_confirm(self):
 
 ---
 
-## 6. View Inheritance (XML)
+## 6. Validation
+
+Constrain fields and add exceptions
+
+```python
+from odoo.exceptions import ValidationError
+
+    test_cost = fields.Float(
+        string='Test Cost'
+    )
+
+    # constrain triggered by changes in test cost and product id
+    @api.constrains("test_cost", "product_id")
+    def check_test(self):
+        for record in self:
+            if record.product_id and record.test_cost > record.product_id.list_price:
+                raise ValidationError("Test cost cannot exceed the product price")
+```
+
+---
+
+## 7. View Inheritance (XML)
 
 Inject into an existing view without editing Odoo's files.
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
 <record id="my_extension" model="ir.ui.view">
     <field name="name">product.template.form.my.extension</field>
     <field name="model">product.template</field>
@@ -187,6 +211,75 @@ Inject into an existing view without editing Odoo's files.
 
     </field>
 </record>
+
+</odoo>
+```
+
+Example module view
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- List view — what you see when browsing all records -->
+    <record id="view_learn_task_list" model="ir.ui.view">
+        <field name="name">learn.task.list</field>
+        <field name="model">learn.task</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="assigned_to"/>
+                <field name="priority"/>
+                <field name="status"/>
+                <field name="deadline"/>
+                <field name="is_overdue"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form view — what you see when opening a single record -->
+    <record id="view_learn_task_form" model="ir.ui.view">
+        <field name="name">learn.task.form</field>
+        <field name="model">learn.task</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- Status bar shown at the top of the form -->
+                    <field name="status" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
+                    <!-- Button that calls action_mark_done() on the model -->
+                    <button name="action_mark_done" string="Mark as Done" type="object" class="btn-primary"/>
+                    <button name="action_mark_in_progress" string="Mark as in-progress" type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="priority"/>
+                        <field name="assigned_to"/>
+                        <field name="product_id"/>
+                        <field name="price_display"/>
+                        <field name="deadline"/>
+                        <field name="is_overdue"/>
+                    </group>
+                    <group string="Details">
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action — defines what happens when the menu item is clicked -->
+    <record id="action_learn_task" model="ir.actions.act_window">
+        <field name="name">Tasks</field>
+        <field name="res_model">learn.task</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menu items — the navigation structure -->
+    <menuitem id="menu_learn_root" name="Learning Base" sequence="100"/>
+    <menuitem id="menu_learn_tasks" name="Tasks" parent="menu_learn_root" action="action_learn_task"/>
+
+</odoo>
 ```
 
 **`position` options:**
@@ -198,7 +291,7 @@ Inject into an existing view without editing Odoo's files.
 
 ---
 
-## 7. Domains (Filtering Records)
+## 8. Domains (Filtering Records)
 
 Domains are Odoo's way of filtering — used in views, fields, and code.
 
@@ -225,7 +318,7 @@ records = self.env["product.template"].search([
 
 ---
 
-## 8. The Environment (self.env)
+## 9. The Environment (self.env)
 
 `self.env` gives you access to everything in Odoo.
 
@@ -248,7 +341,7 @@ new_record = self.env["my.model"].create({
 
 ---
 
-## 9. Common Built-in Models
+## 10. Common Built-in Models
 
 | Model | What it is |
 |-------|-----------|
@@ -264,7 +357,7 @@ new_record = self.env["my.model"].create({
 
 ---
 
-## 10. Manifest Checklist
+## 11. Manifest Checklist
 
 When creating or extending a module:
 
